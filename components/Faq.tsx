@@ -12,7 +12,6 @@ export default function Faq() {
 
   return (
     <section className="relative overflow-hidden py-20 md:py-28">
-      <div className="absolute inset-0 -z-10 bg-ink-50/70" />
       <div className="container-px mx-auto max-w-3xl">
         <SectionHeading
           eyebrow="Veelgestelde vragen"
