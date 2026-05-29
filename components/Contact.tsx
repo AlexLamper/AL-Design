@@ -58,7 +58,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative overflow-hidden py-20 md:py-28">
-      <div className="absolute inset-0 -z-10 bg-ink-50" />
+      <div className="absolute inset-0 -z-10 bg-ink-50/70" />
       <div className="absolute -top-24 left-1/4 -z-10 h-80 w-80 rounded-full bg-brand-200/30 blur-3xl" />
 
       <div className="container-px mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:gap-16">

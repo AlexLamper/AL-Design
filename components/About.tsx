@@ -50,7 +50,7 @@ export default function About() {
 
       {/* Values */}
       <section className="relative overflow-hidden py-16 md:py-24">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white to-ink-50" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/60 to-ink-50/70" />
         <div className="container-px mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Waar we voor staan"

@@ -43,7 +43,7 @@ export default function CursorGlow() {
         translateX: "-50%",
         translateY: "-50%",
         background:
-          "radial-gradient(circle, rgba(99,102,241,0.18) 0%, rgba(168,85,247,0.12) 40%, rgba(99,102,241,0) 70%)",
+          "radial-gradient(circle, rgba(99,102,241,0.26) 0%, rgba(168,85,247,0.17) 40%, rgba(99,102,241,0) 70%)",
       }}
     />
   );

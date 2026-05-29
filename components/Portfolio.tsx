@@ -19,7 +19,7 @@ export default function Portfolio({ limit, withCta = false, heading = true }: Pr
 
   return (
     <section id="werk" className="relative overflow-hidden py-20 md:py-28">
-      <div className="absolute inset-0 -z-10 bg-ink-50" />
+      <div className="absolute inset-0 -z-10 bg-ink-50/70" />
       <div className="absolute -bottom-32 right-0 -z-10 h-96 w-96 rounded-full bg-brand-200/30 blur-3xl" />
 
       <div className="container-px mx-auto max-w-7xl">
