@@ -21,7 +21,7 @@ type TiltProps = {
  * sheen that follows the pointer. Disabled on touch devices and when the user
  * prefers reduced motion (renders a plain element instead).
  */
-export default function Tilt({ children, className, max = 7 }: TiltProps) {
+export default function Tilt({ children, className, max = 3.5 }: TiltProps) {
   const [enabled, setEnabled] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -34,7 +34,7 @@ export default function Tilt({ children, className, max = 7 }: TiltProps) {
 
   const glareX = useTransform(px, [0, 1], ["0%", "100%"]);
   const glareY = useTransform(py, [0, 1], ["0%", "100%"]);
-  const glare = useMotionTemplate`radial-gradient(circle at ${glareX} ${glareY}, rgba(255,255,255,0.55), transparent 55%)`;
+  const glare = useMotionTemplate`radial-gradient(circle at ${glareX} ${glareY}, rgba(255,255,255,0.35), transparent 55%)`;
   const glareOpacity = useSpring(0, { stiffness: 200, damping: 22 });
 
   useEffect(() => {
