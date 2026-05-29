@@ -58,7 +58,7 @@ export default function Hero() {
           className="mx-auto mt-6 max-w-2xl text-lg text-ink-600 md:text-xl"
         >
           {site.name} ontwerpt en bouwt snelle, professionele websites en webshops op maat. Van
-          concept tot livegang — jouw merk online op zijn best.
+          concept tot livegang - jouw merk online op zijn best.
         </motion.p>
 
         <motion.div

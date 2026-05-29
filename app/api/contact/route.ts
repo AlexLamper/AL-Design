@@ -31,14 +31,14 @@ export async function POST(request: Request) {
 
   const { name, email, phone, projectType, message, company } = parsed.data;
 
-  // Honeypot tripped — silently accept without sending.
+  // Honeypot tripped - silently accept without sending.
   if (company) {
     return NextResponse.json({ ok: true });
   }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.error("RESEND_API_KEY ontbreekt — e-mail niet verzonden.");
+    console.error("RESEND_API_KEY ontbreekt - e-mail niet verzonden.");
     return NextResponse.json(
       { error: "De e-mailservice is nog niet geconfigureerd. Bel of mail ons gerust direct." },
       { status: 500 }
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
       from,
       to,
       replyTo: email,
-      subject: `Nieuwe offerteaanvraag — ${projectType} (${name})`,
+      subject: `Nieuwe offerteaanvraag - ${projectType} (${name})`,
       text: [
         `Naam: ${name}`,
         `E-mail: ${email}`,

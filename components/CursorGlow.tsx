@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 /**
- * A soft, brand-coloured spotlight that smoothly trails the cursor.
- * Sits above the page (pointer-events-none) and uses multiply blending so it
- * tints whatever is underneath. Desktop / fine-pointer only and disabled when
- * the user prefers reduced motion.
+ * A soft, brand-coloured glow that smoothly trails the cursor. It sits behind
+ * the page content (-z-10) so it only tints the background and never bleeds
+ * over cards or sections with their own background. Desktop / fine-pointer
+ * only and disabled when the user prefers reduced motion.
  */
 export default function CursorGlow() {
   const [enabled, setEnabled] = useState(false);
@@ -36,14 +36,14 @@ export default function CursorGlow() {
   return (
     <motion.div
       aria-hidden
-      className="pointer-events-none fixed left-0 top-0 z-30 h-[26rem] w-[26rem] rounded-full mix-blend-multiply blur-2xl"
+      className="pointer-events-none fixed left-0 top-0 -z-10 h-[26rem] w-[26rem] rounded-full blur-3xl"
       style={{
         x: springX,
         y: springY,
         translateX: "-50%",
         translateY: "-50%",
         background:
-          "radial-gradient(circle, rgba(99,102,241,0.40) 0%, rgba(168,85,247,0.28) 38%, rgba(99,102,241,0) 70%)",
+          "radial-gradient(circle, rgba(99,102,241,0.18) 0%, rgba(168,85,247,0.12) 40%, rgba(99,102,241,0) 70%)",
       }}
     />
   );

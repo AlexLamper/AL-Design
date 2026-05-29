@@ -4,9 +4,9 @@ import Portfolio from "@/components/Portfolio";
 import CtaBanner from "@/components/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "Ons werk — projecten & cases",
+  title: "Ons werk - projecten & cases",
   description:
-    "Bekijk een selectie van websites die AL Design heeft ontworpen en gebouwd. Echte, live projecten — klik door voor de details.",
+    "Bekijk een selectie van websites die AL Design heeft ontworpen en gebouwd. Echte, live projecten - klik door voor de details.",
   alternates: { canonical: "/werk" },
 };
 

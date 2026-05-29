@@ -6,7 +6,7 @@ import WhyUs from "@/components/WhyUs";
 import CtaBanner from "@/components/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "Over ons — de mensen achter AL Design",
+  title: "Over ons - de mensen achter AL Design",
   description:
     "Maak kennis met AL Design: een moderne webdesignstudio die ondernemers helpt opvallen met snelle, professionele websites. Persoonlijk, creatief en resultaatgericht.",
   alternates: { canonical: "/over-ons" },

@@ -34,7 +34,7 @@ export default function About() {
             <Reveal delay={0.15}>
               <p>
                 Of je nu een eerste website nodig hebt, een verouderde site wilt vernieuwen of online
-                wilt verkopen — we denken met je mee en bouwen met de nieuwste technieken. Snel,
+                wilt verkopen - we denken met je mee en bouwen met de nieuwste technieken. Snel,
                 veilig en goed vindbaar in Google.
               </p>
             </Reveal>

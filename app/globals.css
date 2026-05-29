@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand — indigo/violet accent on a clean light canvas */
+  /* Brand - indigo/violet accent on a clean light canvas */
   --color-brand-50: #eef2ff;
   --color-brand-100: #e0e7ff;
   --color-brand-200: #c7d2fe;

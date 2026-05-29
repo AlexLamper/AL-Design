@@ -11,7 +11,7 @@ export const site = {
   legalName: "AL Design",
   tagline: "Moderne websites die opvallen én opleveren",
   description:
-    "AL Design ontwerpt en bouwt moderne, snelle websites en webshops. Van webdesign en development tot SEO, onderhoud en complete huisstijl — alles onder één dak.",
+    "AL Design ontwerpt en bouwt moderne, snelle websites en webshops. Van webdesign en development tot SEO, onderhoud en complete huisstijl - alles onder één dak.",
   url: "https://aldesign.nl",
   phone: "0657586667",
   phoneIntl: "+31657586667",
@@ -155,7 +155,7 @@ export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
 }
 
-/** Live screenshot service — renders the actual site as an image. */
+/** Live screenshot service - renders the actual site as an image. */
 export function shotUrl(url: string) {
   return `https://image.thum.io/get/width/1200/crop/900/noanimate/${url}`;
 }
@@ -171,7 +171,7 @@ export const processSteps = [
   {
     title: "Kennismaking",
     description:
-      "We bespreken je wensen, doelen en budget. Jij vertelt, wij denken mee — vrijblijvend.",
+      "We bespreken je wensen, doelen en budget. Jij vertelt, wij denken mee - vrijblijvend.",
   },
   {
     title: "Ontwerp",
@@ -201,7 +201,7 @@ export const usps = [
   },
   {
     title: "Persoonlijk contact",
-    description: "Korte lijnen, één vast aanspreekpunt en eerlijk advies — geen bureaucratie.",
+    description: "Korte lijnen, één vast aanspreekpunt en eerlijk advies - geen bureaucratie.",
   },
   {
     title: "Eerlijke prijs",
@@ -209,7 +209,7 @@ export const usps = [
   },
   {
     title: "Mobiel-first",
-    description: "Perfecte weergave op telefoon, tablet en desktop — altijd.",
+    description: "Perfecte weergave op telefoon, tablet en desktop - altijd.",
   },
   {
     title: "Zorgeloos onderhoud",
@@ -234,7 +234,7 @@ export type Package = {
   features: string[];
 };
 
-// Indicatieve prijzen — pas eenvoudig aan in dit bestand.
+// Indicatieve prijzen - pas eenvoudig aan in dit bestand.
 export const packages: Package[] = [
   {
     name: "Onepager",

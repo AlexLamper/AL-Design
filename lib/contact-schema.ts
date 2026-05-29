@@ -6,7 +6,7 @@ export const contactSchema = z.object({
   phone: z.string().max(40).optional().or(z.literal("")),
   projectType: z.string().min(1, "Kies een projecttype").max(80),
   message: z.string().min(10, "Vertel kort waar we je mee kunnen helpen").max(4000),
-  // Honeypot — must stay empty (bots fill it).
+  // Honeypot - must stay empty (bots fill it).
   company: z.string().max(0).optional().or(z.literal("")),
 });
 

@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const project = getProject(slug);
   if (!project) return { title: "Project niet gevonden" };
   return {
-    title: `${project.name} — ${project.category}`,
+    title: `${project.name} - ${project.category}`,
     description: project.description,
     alternates: { canonical: `/werk/${project.slug}` },
     openGraph: {
-      title: `${project.name} — project van ${site.name}`,
+      title: `${project.name} - project van ${site.name}`,
       description: project.description,
       images: [{ url: shotUrl(project.url), width: 1200, height: 750, alt: project.name }],
     },

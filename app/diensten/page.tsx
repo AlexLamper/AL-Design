@@ -7,7 +7,7 @@ import Faq from "@/components/Faq";
 import CtaBanner from "@/components/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "Diensten & prijzen — webdesign, webshops, SEO & branding",
+  title: "Diensten & prijzen - webdesign, webshops, SEO & branding",
   description:
     "Bekijk de diensten van AL Design: webdesign & development, webshops, SEO en branding. Transparante pakketten en prijzen. Vraag een offerte op maat aan.",
   alternates: { canonical: "/diensten" },
