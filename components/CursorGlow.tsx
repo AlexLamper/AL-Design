@@ -5,15 +5,17 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 /**
  * A soft, brand-coloured spotlight that smoothly trails the cursor.
- * Desktop / fine-pointer only, and disabled when the user prefers reduced motion.
+ * Sits above the page (pointer-events-none) and uses multiply blending so it
+ * tints whatever is underneath. Desktop / fine-pointer only and disabled when
+ * the user prefers reduced motion.
  */
 export default function CursorGlow() {
   const [enabled, setEnabled] = useState(false);
 
-  const x = useMotionValue(-400);
-  const y = useMotionValue(-400);
-  const springX = useSpring(x, { stiffness: 120, damping: 20, mass: 0.6 });
-  const springY = useSpring(y, { stiffness: 120, damping: 20, mass: 0.6 });
+  const x = useMotionValue(-500);
+  const y = useMotionValue(-500);
+  const springX = useSpring(x, { stiffness: 150, damping: 22, mass: 0.5 });
+  const springY = useSpring(y, { stiffness: 150, damping: 22, mass: 0.5 });
 
   useEffect(() => {
     const finePointer = window.matchMedia("(pointer: fine)").matches;
@@ -34,14 +36,14 @@ export default function CursorGlow() {
   return (
     <motion.div
       aria-hidden
-      className="pointer-events-none fixed -z-10 h-[36rem] w-[36rem] rounded-full opacity-60 blur-3xl"
+      className="pointer-events-none fixed left-0 top-0 z-30 h-[26rem] w-[26rem] rounded-full mix-blend-multiply blur-2xl"
       style={{
         x: springX,
         y: springY,
         translateX: "-50%",
         translateY: "-50%",
         background:
-          "radial-gradient(circle, rgba(99,102,241,0.16) 0%, rgba(168,85,247,0.10) 35%, transparent 70%)",
+          "radial-gradient(circle, rgba(99,102,241,0.40) 0%, rgba(168,85,247,0.28) 38%, rgba(99,102,241,0) 70%)",
       }}
     />
   );
