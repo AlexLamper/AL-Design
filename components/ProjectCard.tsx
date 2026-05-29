@@ -5,15 +5,14 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { shotUrl, type Project } from "@/lib/site";
 import BrowserFrame from "./BrowserFrame";
+import Tilt from "./Tilt";
 import { itemVariants } from "./Reveal";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <motion.div variants={itemVariants}>
-      <Link
-        href={`/werk/${project.slug}`}
-        className="group block rounded-3xl border border-ink-200 bg-white p-4 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-lift"
-      >
+    <motion.div variants={itemVariants} className="h-full">
+      <Tilt className="group relative h-full overflow-hidden rounded-3xl border border-ink-200 bg-white p-4 shadow-soft transition-colors duration-300 hover:border-brand-200 hover:shadow-lift">
+      <Link href={`/werk/${project.slug}`} className="block">
         <BrowserFrame
           domain={project.domain}
           shotUrl={shotUrl(project.url)}
@@ -43,6 +42,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           </span>
         </div>
       </Link>
+      </Tilt>
     </motion.div>
   );
 }

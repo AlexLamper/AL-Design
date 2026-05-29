@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Phone, Mail, Sparkles } from "lucide-react";
 import { site } from "@/lib/site";
 
@@ -19,15 +20,27 @@ const item = {
 };
 
 export default function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const yBg = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const yContent = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
   return (
-    <section id="top" className="relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32">
-      {/* Decorative background */}
-      <div className="absolute inset-0 -z-10 bg-grid [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-      <div className="absolute -top-32 -left-24 -z-10 h-96 w-96 rounded-full bg-brand-300/40 blur-3xl animate-blob" />
-      <div className="absolute -top-20 right-0 -z-10 h-96 w-96 rounded-full bg-accent-400/30 blur-3xl animate-blob [animation-delay:-6s]" />
-      <div className="absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-brand-200/40 blur-3xl animate-blob [animation-delay:-12s]" />
+    <section ref={ref} id="top" className="relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32">
+      {/* Decorative background (parallax) */}
+      <motion.div style={{ y: yBg }} className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+        <div className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-brand-300/40 blur-3xl animate-blob" />
+        <div className="absolute -top-20 right-0 h-96 w-96 rounded-full bg-accent-400/30 blur-3xl animate-blob [animation-delay:-6s]" />
+        <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-brand-200/40 blur-3xl animate-blob [animation-delay:-12s]" />
+      </motion.div>
 
       <motion.div
+        style={{ y: yContent, opacity: contentOpacity }}
         variants={container}
         initial="hidden"
         animate="visible"

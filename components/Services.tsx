@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { services } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
+import Tilt from "./Tilt";
 import Reveal, { itemVariants } from "./Reveal";
 
 export default function Services({ withCta = false }: { withCta?: boolean }) {
@@ -26,11 +27,8 @@ export default function Services({ withCta = false }: { withCta?: boolean }) {
         {services.map((service, i) => {
           const Icon = service.icon;
           return (
-            <motion.div
-              key={service.title}
-              variants={itemVariants}
-              className="group relative overflow-hidden rounded-3xl border border-ink-200 bg-white p-8 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-lift"
-            >
+            <motion.div key={service.title} variants={itemVariants} className="h-full">
+              <Tilt className="group relative h-full overflow-hidden rounded-3xl border border-ink-200 bg-white p-8 shadow-soft transition-colors duration-300 hover:border-brand-200 hover:shadow-lift">
               {/* Hover glow in the corner */}
               <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-gradient-to-br from-brand-400/20 to-accent-400/20 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
               {/* Large faint index */}
@@ -56,6 +54,7 @@ export default function Services({ withCta = false }: { withCta?: boolean }) {
                   ))}
                 </ul>
               </div>
+              </Tilt>
             </motion.div>
           );
         })}
