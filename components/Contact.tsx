@@ -65,19 +65,14 @@ export default function Contact() {
         {/* Left: pitch + contact details */}
         <div>
           <Reveal>
-            <span className="inline-block rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-700">
-              Contact
-            </span>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-ink-900 md:text-4xl">
+            <h2 className="font-display text-3xl font-extrabold tracking-tight text-ink-900 md:text-4xl">
               Klaar voor een website die werkt?
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-4 text-lg text-ink-600">
-              Vraag vrijblijvend een offerte aan. Vertel kort over je project en we nemen snel
-              contact met je op — meestal binnen één werkdag.
+              Liever direct contact? Bel of mail ons gerust. Of vul het formulier in en we nemen
+              snel contact met je op.
             </p>
           </Reveal>
 

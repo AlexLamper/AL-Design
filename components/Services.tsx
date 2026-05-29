@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { services } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
-import { itemVariants } from "./Reveal";
+import Reveal, { itemVariants } from "./Reveal";
 
-export default function Services() {
+export default function Services({ withCta = false }: { withCta?: boolean }) {
   return (
     <section id="diensten" className="container-px mx-auto max-w-7xl py-20 md:py-28">
       <SectionHeading
@@ -49,6 +50,18 @@ export default function Services() {
           );
         })}
       </motion.div>
+
+      {withCta && (
+        <Reveal className="mt-12 text-center" delay={0.1}>
+          <Link
+            href="/diensten"
+            className="group inline-flex items-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-lift transition-all hover:bg-brand-700"
+          >
+            Bekijk alle diensten &amp; prijzen
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </Reveal>
+      )}
     </section>
   );
 }

@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import CursorGlow from "@/components/CursorGlow";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -99,7 +102,10 @@ export default function RootLayout({
       className={`${inter.variable} ${sora.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white">
-        {children}
+        <CursorGlow />
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

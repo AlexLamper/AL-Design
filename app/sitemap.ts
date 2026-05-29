@@ -1,13 +1,21 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/site";
+import { site, projects } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: site.url,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-  ];
+  const now = new Date();
+  const routes = ["", "/over-ons", "/diensten", "/werk", "/contact", "/privacy"].map((path) => ({
+    url: `${site.url}${path}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: path === "" ? 1 : 0.8,
+  }));
+
+  const projectRoutes = projects.map((p) => ({
+    url: `${site.url}/werk/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
+  return [...routes, ...projectRoutes];
 }

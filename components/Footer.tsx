@@ -1,4 +1,5 @@
-import { Phone, Mail, ArrowUp } from "lucide-react";
+import Link from "next/link";
+import { Phone, Mail } from "lucide-react";
 import { site, navLinks, services } from "@/lib/site";
 import Logo from "./Logo";
 
@@ -21,9 +22,9 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="transition-colors hover:text-white">
+                  <Link href={link.href} className="transition-colors hover:text-white">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -36,9 +37,9 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {services.map((s) => (
                 <li key={s.title}>
-                  <a href="#diensten" className="transition-colors hover:text-white">
+                  <Link href="/diensten" className="transition-colors hover:text-white">
                     {s.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -66,12 +67,12 @@ export default function Footer() {
                 </a>
               </li>
               <li className="pt-2">
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="inline-flex rounded-full bg-brand-600 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-500"
                 >
                   Offerte aanvragen
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -81,9 +82,9 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. Alle rechten voorbehouden.
           </p>
-          <a href="#top" className="inline-flex items-center gap-1.5 transition-colors hover:text-white">
-            Terug naar boven <ArrowUp className="h-4 w-4" />
-          </a>
+          <Link href="/privacy" className="transition-colors hover:text-white">
+            Privacybeleid
+          </Link>
         </div>
       </div>
     </footer>

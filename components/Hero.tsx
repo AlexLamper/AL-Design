@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Mail, Sparkles } from "lucide-react";
 import { site } from "@/lib/site";
@@ -64,19 +65,19 @@ export default function Hero() {
           variants={item}
           className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="group inline-flex items-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-lift transition-all hover:bg-brand-700"
           >
             Vraag een offerte aan
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </a>
-          <a
-            href="#werk"
+          </Link>
+          <Link
+            href="/werk"
             className="inline-flex items-center gap-2 rounded-full border border-ink-200 bg-white px-7 py-3.5 text-base font-semibold text-ink-800 shadow-soft transition-all hover:border-brand-300 hover:text-brand-700"
           >
             Bekijk ons werk
-          </a>
+          </Link>
         </motion.div>
 
         <motion.div
