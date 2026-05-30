@@ -24,7 +24,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     openGraph: {
       title: `${project.name} - project van ${site.name}`,
       description: project.description,
-      images: [{ url: shotUrl(project.url), width: 1200, height: 750, alt: project.name }],
+      images: [
+        { url: `${site.url}${shotUrl(project.slug)}`, width: 2840, height: 1555, alt: project.name },
+      ],
     },
   };
 }
@@ -85,7 +87,7 @@ export default async function ProjectPage({ params }: Params) {
           <a href={project.url} target="_blank" rel="noopener noreferrer" className="group block">
             <BrowserFrame
               domain={project.domain}
-              shotUrl={shotUrl(project.url)}
+              shotUrl={shotUrl(project.slug)}
               alt={`Screenshot van de website ${project.name} (${project.domain}) gemaakt door ${site.name}`}
             />
           </a>

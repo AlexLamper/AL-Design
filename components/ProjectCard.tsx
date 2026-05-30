@@ -15,7 +15,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <Link href={`/casus/${project.slug}`} className="block">
         <BrowserFrame
           domain={project.domain}
-          shotUrl={shotUrl(project.url)}
+          shotUrl={shotUrl(project.slug)}
           alt={`Screenshot van de website ${project.name} (${project.domain}) gemaakt door AL Design`}
         />
 

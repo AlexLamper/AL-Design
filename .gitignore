@@ -43,3 +43,13 @@ dev.log
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI agent tooling (caveman skills) - not part of the published site
+/.agents/
+/.claude/
+skills-lock.json
+
+# AI agent instructions + internal notes - not part of the published site
+/CLAUDE.md
+/AGENTS.md
+/todo.txt

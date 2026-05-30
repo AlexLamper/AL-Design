@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "webshop laten maken",
     "webontwikkeling",
     "SEO",
-    "huisstijl",
+    "merkidentiteit",
     "branding",
     "Next.js website",
     "webdesigner Nederland",

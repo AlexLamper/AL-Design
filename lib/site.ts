@@ -11,7 +11,7 @@ export const site = {
   legalName: "AL Design",
   tagline: "Moderne websites die opvallen én opleveren",
   description:
-    "AL Design ontwerpt en bouwt moderne, snelle websites en webshops. Van webdesign en development tot SEO, onderhoud en complete huisstijl - alles onder één dak.",
+    "AL Design ontwerpt en bouwt moderne, snelle websites en webapplicaties. Van webdesign en development tot SEO, onderhoud en visuele merkidentiteit - alles onder één dak.",
   url: "https://aldesign.nl",
   phone: "0657586667",
   phoneIntl: "+31657586667",
@@ -33,7 +33,11 @@ export const services: Service[] = [
     title: "Webdesign & development",
     description:
       "Op maat ontworpen websites die razendsnel laden, perfect werken op elk scherm en jouw merk laten stralen.",
-    features: ["Responsive design", "Maatwerk in Next.js", "Bliksemsnel & veilig"],
+    features: [
+      "Werkt perfect op mobiel, tablet & desktop",
+      "Volledig op maat, geen standaard sjabloon",
+      "Snel, veilig en altijd up-to-date",
+    ],
   },
   {
     icon: Layers,
@@ -51,10 +55,10 @@ export const services: Service[] = [
   },
   {
     icon: Palette,
-    title: "Branding & huisstijl",
+    title: "Logo & branding",
     description:
-      "Een herkenbaar merk van logo tot kleurenpalet. Een sterke visuele identiteit die vertrouwen wekt.",
-    features: ["Logo & huisstijl", "Visuele identiteit", "Merkstrategie"],
+      "Een uniek logo en een herkenbare merkidentiteit, volledig op maat ontworpen. Van logo-ontwerp tot kleurenpalet en stijlgids - een sterke visuele identiteit die vertrouwen wekt en jouw bedrijf onderscheidt.",
+    features: ["Logo-ontwerp op maat", "Visuele stijlgids", "Merkstrategie"],
   },
 ];
 
@@ -155,13 +159,38 @@ export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
 }
 
-/** Live screenshot service - renders the actual site as an image. */
-export function shotUrl(url: string) {
-  return `https://image.thum.io/get/width/1200/crop/900/noanimate/${url}`;
+export type ShowcaseItem = {
+  /** Screenshot filename in /public/shots, or undefined for the placeholder. */
+  slug?: string;
+  domain: string;
+  placeholder?: boolean;
+};
+
+/**
+ * Sites shown in the hero "wall of work". More entries than `projects` so the
+ * two scrolling columns never show the same screenshot at once. Each `slug`
+ * maps to public/shots/<slug>.png.
+ */
+// Order matters: columns are split even/odd indices, so bijbelapi and
+// ruimingswerken-flakkee (similar dark styling) sit in DIFFERENT columns and
+// never land next to each other.
+export const showcaseSites: ShowcaseItem[] = [
+  { slug: "lambdago", domain: "lambdago.nl" },
+  { slug: "ruimingswerken-flakkee", domain: "ruimingswerkenflakkee.nl" },
+  { slug: "bijbelapi", domain: "bijbelapi.com" },
+  { slug: "bijbel-studie", domain: "bijbel-studie.com" },
+  { slug: "bijbelquiz", domain: "bijbelquiz.com" },
+  { slug: "ptroost-afbouwbedrijf", domain: "ptroostafbouwbedrijf.nl" },
+  { domain: "jouwsite.nl", placeholder: true },
+];
+
+/** Local project screenshot served from public/shots/<slug>.png. */
+export function shotUrl(slug: string) {
+  return `/shots/${slug}.png`;
 }
 
 export const stats = [
-  { value: 25, suffix: "+", label: "Opgeleverde projecten" },
+  { value: 10, suffix: "+", label: "Opgeleverde projecten" },
   { value: 5, suffix: " jaar", label: "Ervaring" },
   { value: 100, suffix: "%", label: "Tevreden klanten" },
   { value: 99, suffix: "+", label: "PageSpeed score" },
@@ -295,16 +324,12 @@ export const faqs = [
     a: "Ja. Bij elk pakket regelen we hosting en domein, zodat jij nergens omkijken naar hebt. We houden je site bovendien veilig en up-to-date.",
   },
   {
-    q: "Kan ik mijn website later zelf aanpassen?",
-    a: "Zeker. We kunnen een eenvoudig beheersysteem of blogfunctie toevoegen. Liever zorgeloos? Dan verzorgen wij de aanpassingen via het onderhoudsabonnement.",
-  },
-  {
     q: "Wordt mijn website goed gevonden in Google?",
     a: "Bij de volledige website en redesign is SEO-optimalisatie standaard inbegrepen. We zorgen voor snelle laadtijden, nette code en de juiste structuur om goed vindbaar te zijn.",
   },
   {
-    q: "Werken jullie ook met bestaande huisstijl?",
-    a: "Ja. Heb je al een logo en huisstijl? Die verwerken we netjes. Heb je nog niets? Dan ontwerpen we een passende identiteit voor je merk.",
+    q: "Werken jullie ook met een bestaande merkidentiteit?",
+    a: "Ja. Heb je al een logo en visuele stijl? Die verwerken we netjes in het ontwerp. Heb je nog niets? Dan ontwerpen we een passende visuele identiteit voor je merk.",
   },
 ];
 
@@ -333,9 +358,8 @@ export const aboutValues = [
 
 export const projectTypes = [
   "Nieuwe website",
-  "Webshop / e-commerce",
   "Website redesign",
   "SEO & onderhoud",
-  "Branding / huisstijl",
+  "Branding / merkidentiteit",
   "Anders / weet ik nog niet",
 ];

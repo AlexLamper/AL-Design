@@ -71,7 +71,7 @@ function TunnelStage({
         <div className="rounded-2xl ring-1 ring-ink-300/40 shadow-[0_40px_120px_-20px_rgba(0,0,0,0.8)]">
           <BrowserFrame
             domain={project.domain}
-            shotUrl={shotUrl(project.url)}
+            shotUrl={shotUrl(project.slug)}
             alt={`Website ${project.name} (${project.domain}) gemaakt door AL Design`}
           />
         </div>
@@ -156,7 +156,7 @@ export default function ProjectTunnel() {
         <SectionHeading
           eyebrow="Casus"
           title="Scroll door onze projecten"
-          description="Echte, live websites die wij ontwierpen en bouwden. Scroll en zoom er doorheen."
+          description="Een aantal projecten die wij hebben gemaakt."
         />
       </div>
 

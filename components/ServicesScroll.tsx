@@ -15,6 +15,19 @@ function useReducedMotion() {
   return reduced;
 }
 
+/** True on phones (< md). The horizontal scroll-jack is built for laptops/tablets. */
+function useIsMobile() {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return mobile;
+}
+
 /** One service rendered as a full-bleed editorial panel (no card). */
 function Panel({
   index,
@@ -79,6 +92,10 @@ function Panel({
 
 export default function ServicesScroll() {
   const reduced = useReducedMotion();
+  const isMobile = useIsMobile();
+  // Phones and reduced-motion users get the plain vertical list (no scroll-jack,
+  // no snap) - the horizontal pinned scroller is for laptops/tablets only.
+  const useList = reduced || isMobile;
   const ref = useRef<HTMLDivElement>(null);
   const total = services.length;
 
@@ -93,9 +110,9 @@ export default function ServicesScroll() {
 
   // Gentle, *smooth* snap: when scrolling stops and you're already close to a
   // panel, ease to its centre. If you're mid-way between panels it leaves you
-  // alone — never forced, never instant.
+  // alone - never forced, never instant.
   useEffect(() => {
-    if (reduced) return;
+    if (useList) return;
     const section = ref.current;
     if (!section) return;
     let raf = 0;
@@ -129,7 +146,7 @@ export default function ServicesScroll() {
       if (timer) clearTimeout(timer);
       cancelAnimationFrame(raf);
     };
-  }, [reduced, total]);
+  }, [useList, total]);
 
   const Heading = (
     <div className="container-px mx-auto max-w-7xl">
@@ -147,7 +164,7 @@ export default function ServicesScroll() {
         <Reveal delay={0.1}>
           <p className="max-w-sm text-ink-500">
             Eén partner, van het eerste ontwerp tot doorlopend onderhoud.{" "}
-            {!reduced && (
+            {!useList && (
               <span className="text-ink-700">Scroll om door de diensten te gaan.</span>
             )}
           </p>
@@ -156,8 +173,8 @@ export default function ServicesScroll() {
     </div>
   );
 
-  // Reduced motion / fallback: a clean vertical list, no pinning.
-  if (reduced) {
+  // Phones / reduced motion: a clean vertical list, no pinning, no scroll-jack.
+  if (useList) {
     return (
       <section id="diensten" className="py-20 md:py-28">
         {Heading}

@@ -19,15 +19,15 @@ export default function BrowserFrame({ domain, shotUrl, alt }: Props) {
           {domain}
         </div>
       </div>
-      {/* Screenshot */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink-100">
+      {/* Screenshot - shown in full, never cropped */}
+      <div className="w-full overflow-hidden bg-ink-100">
         <Image
           src={shotUrl}
           alt={alt}
-          fill
-          unoptimized
+          width={2840}
+          height={1555}
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover object-top transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+          className="block h-auto w-full transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
         />
       </div>
     </div>

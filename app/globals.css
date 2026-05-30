@@ -102,6 +102,23 @@ body {
   animation: marquee 28s linear infinite;
 }
 
+/* Vertical marquees for the hero "wall of work" */
+@keyframes marquee-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+@keyframes marquee-down {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+
+.animate-marquee-up {
+  animation: marquee-up 30s linear infinite;
+}
+.animate-marquee-down {
+  animation: marquee-down 30s linear infinite;
+}
+
 /* Decorative grid background (hairline light lines on the dark canvas) */
 .bg-grid {
   background-image:
@@ -138,6 +155,29 @@ body {
   text-shadow: 0 0 40px rgba(255, 255, 255, 0.35);
 }
 
+/* Metallic sheen that sweeps across the hero wordmark */
+@keyframes sheen-sweep {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.text-sheen {
+  background-image: linear-gradient(
+    110deg,
+    #5b5b63 0%,
+    #5b5b63 38%,
+    #ffffff 48%,
+    #cfe3ff 52%,
+    #5b5b63 62%,
+    #5b5b63 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: sheen-sweep 6s linear infinite;
+}
+
 ::selection {
   background: #ffffff;
   color: #08080a;
@@ -146,5 +186,5 @@ body {
 /* Reduced motion respect */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .animate-blob, .animate-marquee, .animate-tunnel { animation: none; }
+  .animate-blob, .animate-marquee, .animate-marquee-up, .animate-marquee-down, .animate-tunnel, .text-sheen { animation: none; }
 }

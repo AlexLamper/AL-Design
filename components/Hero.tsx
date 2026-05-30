@@ -9,8 +9,8 @@ import {
   useTransform,
 } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { site, projects, shotUrl } from "@/lib/site";
-import BrowserFrame from "./BrowserFrame";
+import { site } from "@/lib/site";
+import HeroShowcase from "./HeroShowcase";
 
 const container = {
   hidden: {},
@@ -61,8 +61,6 @@ export default function Hero() {
   const yContent = useTransform(scrollYProgress, [0, 1], [0, 60]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
-  const showcase = projects[0];
-
   return (
     <section
       ref={ref}
@@ -100,7 +98,7 @@ export default function Hero() {
             variants={item}
             className="mx-auto mt-7 max-w-md text-lg leading-relaxed text-ink-500 lg:mx-0"
           >
-            {site.name} ontwerpt en bouwt snelle, professionele websites op maat.
+            Wij maken websites die opvallen, snel laden en jouw klanten overtuigen.
           </motion.p>
 
           <motion.div
@@ -123,24 +121,14 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right: a single, clean showpiece */}
+        {/* Right: an abstract, eye-catching showpiece */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="relative mx-auto w-full max-w-xl"
+          className="relative mx-auto hidden w-full max-w-xl md:block"
         >
-          <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            className="rounded-2xl ring-1 ring-ink-200 shadow-[0_40px_120px_-30px_rgba(0,0,0,0.8)]"
-          >
-            <BrowserFrame
-              domain={showcase.domain}
-              shotUrl={shotUrl(showcase.url)}
-              alt={`Voorbeeld van een website gemaakt door ${site.name}: ${showcase.name}`}
-            />
-          </motion.div>
+          <HeroShowcase />
         </motion.div>
       </motion.div>
     </section>

@@ -21,7 +21,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 const steps = [
   { title: "Je aanvraag", text: "Vul het formulier in of bel ons. Hoe meer je deelt, hoe beter." },
-  { title: "Kennismaking", text: "We nemen binnen één werkdag contact op om je plan te bespreken." },
+  { title: "Kennismaking", text: "We nemen zo snel mogelijk contact op om je plan te bespreken - doorgaans binnen enkele werkdagen." },
   { title: "Offerte op maat", text: "Je ontvangt een heldere offerte zonder verrassingen achteraf." },
 ];
 
@@ -75,23 +75,23 @@ export default function Contact() {
     "mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500";
 
   return (
-    <section id="contact" className="relative overflow-hidden pt-28 pb-20 md:pt-32 md:pb-28">
-      <div className="container-px mx-auto grid max-w-6xl gap-12 lg:grid-cols-5 lg:gap-16">
-        {/* Left: clear orientation — how it works + how to reach us */}
-        <div className="lg:col-span-2 lg:sticky lg:top-28 lg:self-start">
+    <section id="contact" className="relative overflow-hidden pt-16 pb-10 md:pt-20 md:pb-12">
+      <div className="container-px mx-auto grid max-w-6xl gap-10 lg:grid-cols-5 lg:gap-16">
+        {/* Left: clear orientation - how it works + how to reach us */}
+        <div className="lg:col-span-2 lg:sticky lg:top-24 lg:self-start">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-ink-200 bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-accent-400">
-              <Clock className="h-3.5 w-3.5" /> Reactie binnen 1 werkdag
+              <Clock className="h-3.5 w-3.5" /> Reactie binnen enkele werkdagen
             </span>
           </Reveal>
           <Reveal delay={0.05}>
             <h1 className="mt-5 font-display text-4xl font-normal tracking-tight text-ink-900 md:text-5xl">
-              Vraag je offerte aan
+              Hoe ziet jouw nieuwe website eruit?
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-3 text-lg text-ink-500">
-              Vertel kort over je project. Liever direct contact? Bel of mail gerust.
+              Laat het ons weten! Liever direct contact? Bel of mail gerust.
             </p>
           </Reveal>
 
@@ -111,7 +111,7 @@ export default function Contact() {
           </ol>
 
           {/* Direct contact */}
-          <div className="mt-8 space-y-2 border-t border-ink-200 pt-6">
+          <div className="mt-7 space-y-2 border-t border-ink-200 pt-5">
             <Reveal delay={0.25}>
               <a
                 href={`tel:${site.phoneIntl}`}
@@ -145,7 +145,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="rounded-3xl border border-ink-200 bg-surface p-6 shadow-lift md:p-9 lg:col-span-3"
+          className="rounded-3xl border border-ink-200 bg-surface p-6 shadow-lift md:p-7 lg:col-span-3"
         >
           {status === "success" ? (
             <div className="flex h-full min-h-[24rem] flex-col items-center justify-center text-center">
@@ -162,7 +162,7 @@ export default function Contact() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" noValidate>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
               {/* Honeypot */}
               <div className="hidden" aria-hidden="true">
                 <label>
@@ -258,7 +258,7 @@ export default function Contact() {
                     </label>
                     <textarea
                       id="message"
-                      rows={5}
+                      rows={4}
                       className={inputClass}
                       placeholder="Vertel kort over je project, wensen en eventueel budget…"
                       {...register("message", {
@@ -279,7 +279,7 @@ export default function Contact() {
                 </div>
               )}
 
-              <div className="border-t border-ink-200 pt-6">
+              <div className="border-t border-ink-200 pt-5">
                 <button
                   type="submit"
                   disabled={status === "submitting"}

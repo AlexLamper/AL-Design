@@ -66,6 +66,7 @@ export default function Footer() {
                   <Mail className="h-4 w-4" /> {site.email}
                 </a>
               </li>
+              <li className="text-ink-500">KvK: 92873324</li>
               <li className="pt-2">
                 <Link
                   href="/contact"

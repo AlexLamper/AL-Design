@@ -18,7 +18,10 @@ export default function Portfolio({ limit, withCta = false, heading = true }: Pr
   const items = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section id="casus" className="relative overflow-hidden py-20 md:py-28">
+    <section
+      id="casus"
+      className={`relative overflow-hidden pb-20 md:pb-28 ${heading ? "pt-20 md:pt-28" : "pt-4 md:pt-6"}`}
+    >
       <div className="container-px mx-auto max-w-7xl">
         {heading && (
           <SectionHeading
@@ -33,7 +36,7 @@ export default function Portfolio({ limit, withCta = false, heading = true }: Pr
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
-          className="mt-14 grid gap-8 md:grid-cols-2"
+          className={`grid gap-8 md:grid-cols-2 ${heading ? "mt-14" : "mt-0"}`}
         >
           {items.map((project) => (
             <ProjectCard key={project.slug} project={project} />

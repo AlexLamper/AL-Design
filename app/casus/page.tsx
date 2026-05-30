@@ -20,7 +20,7 @@ export default function CasusPage() {
             Projecten waar we <span className="text-accent-400">trots</span> op zijn
           </>
         }
-        description="Een selectie van websites die we hebben ontworpen en gebouwd. Klik op een project voor meer details."
+        description="Bekijk onze selectie van gerealiseerde websites. Klik op een project voor meer informatie."
       />
       <Portfolio heading={false} />
       <CtaBanner />
