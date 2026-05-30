@@ -28,25 +28,25 @@ export default function Services({ withCta = false }: { withCta?: boolean }) {
           const Icon = service.icon;
           return (
             <motion.div key={service.title} variants={itemVariants} className="h-full">
-              <Tilt className="group relative h-full overflow-hidden rounded-3xl border border-ink-200 bg-white p-8 shadow-soft transition-colors duration-300 hover:border-brand-200 hover:shadow-lift">
+              <Tilt className="group relative h-full overflow-hidden rounded-3xl border border-ink-200 bg-surface p-8 shadow-soft transition-colors duration-300 hover:border-brand-200 hover:shadow-lift">
               {/* Hover glow in the corner */}
               <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-gradient-to-br from-brand-400/20 to-accent-400/20 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
               {/* Large faint index */}
-              <span className="pointer-events-none absolute right-6 top-4 select-none font-display text-6xl font-extrabold text-ink-100 transition-colors duration-300 group-hover:text-brand-100">
+              <span className="pointer-events-none absolute right-6 top-4 select-none font-display text-6xl font-normal text-ink-100 transition-colors duration-300 group-hover:text-brand-100">
                 {String(i + 1).padStart(2, "0")}
               </span>
 
               <div className="relative">
-                <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-accent-500 text-white shadow-lift transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-110">
+                <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-accent-500 text-ink-50 shadow-lift transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-110">
                   <Icon className="h-7 w-7" />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-bold text-ink-900">{service.title}</h3>
+                <h3 className="mt-5 font-display text-xl font-medium text-ink-900">{service.title}</h3>
                 <p className="mt-2 max-w-md leading-relaxed text-ink-600">{service.description}</p>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {service.features.map((f) => (
                     <li
                       key={f}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1.5 text-xs font-medium text-brand-700"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-brand-500/15 px-3 py-1.5 text-xs font-medium text-accent-400"
                     >
                       <Check className="h-3.5 w-3.5" />
                       {f}
@@ -64,7 +64,7 @@ export default function Services({ withCta = false }: { withCta?: boolean }) {
         <Reveal className="mt-12 text-center" delay={0.1}>
           <Link
             href="/diensten"
-            className="group inline-flex items-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-lift transition-all hover:bg-brand-700"
+            className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-ink-50 shadow-lift transition-all hover:bg-ink-700"
           >
             Bekijk alle diensten &amp; prijzen
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

@@ -5,11 +5,11 @@ import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-900 text-ink-300">
+    <footer className="bg-transparent text-ink-400">
       <div className="container-px mx-auto max-w-7xl py-14">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
-            <Logo className="h-9 w-auto" variant="light" />
+            <Logo className="h-14 w-auto" variant="light" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-400">
               {site.description}
             </p>
@@ -69,7 +69,7 @@ export default function Footer() {
               <li className="pt-2">
                 <Link
                   href="/contact"
-                  className="inline-flex rounded-full bg-brand-600 px-5 py-2.5 font-semibold text-white transition-colors hover:bg-brand-500"
+                  className="inline-flex rounded-full bg-white px-5 py-2.5 font-semibold text-ink-50 transition-colors hover:bg-ink-700"
                 >
                   Offerte aanvragen
                 </Link>
@@ -78,7 +78,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-ink-800 pt-6 text-sm text-ink-500 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-ink-200/50 pt-6 text-sm text-ink-500 sm:flex-row">
           <p>
             © {new Date().getFullYear()} {site.name}. Alle rechten voorbehouden.
           </p>

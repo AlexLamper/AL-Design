@@ -29,20 +29,20 @@ export default function Pricing() {
             variants={itemVariants}
             className={`relative flex h-full flex-col rounded-3xl border p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift ${
               pkg.highlight
-                ? "border-brand-300 bg-white shadow-lift ring-1 ring-brand-200"
-                : "border-ink-200 bg-white shadow-soft"
+                ? "border-accent-400 bg-surface shadow-lift ring-1 ring-brand-200"
+                : "border-ink-200 bg-surface shadow-soft"
             }`}
           >
             {pkg.highlight && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-600 px-4 py-1 text-xs font-semibold text-white shadow-soft">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-white px-4 py-1 text-xs font-semibold text-ink-50 shadow-soft">
                 Meest gekozen
               </span>
             )}
-            <h3 className="font-display text-xl font-bold text-ink-900">{pkg.name}</h3>
+            <h3 className="font-display text-xl font-medium text-ink-900">{pkg.name}</h3>
             <p className="mt-1.5 min-h-[2.5rem] text-sm text-ink-600">{pkg.tagline}</p>
 
             <div className="mt-5 flex items-baseline gap-1">
-              <span className="font-display text-3xl font-extrabold text-ink-900">
+              <span className="font-display text-3xl font-normal text-ink-900">
                 {pkg.priceOnce}
               </span>
             </div>
@@ -53,7 +53,7 @@ export default function Pricing() {
             <ul className="mt-6 flex-1 space-y-3">
               {pkg.features.map((f) => (
                 <li key={f} className="flex items-start gap-2.5 text-sm text-ink-700">
-                  <Check className="mt-0.5 h-4 w-4 flex-none text-brand-600" />
+                  <Check className="mt-0.5 h-4 w-4 flex-none text-accent-400" />
                   {f}
                 </li>
               ))}
@@ -63,8 +63,8 @@ export default function Pricing() {
               href="/contact"
               className={`group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all ${
                 pkg.highlight
-                  ? "bg-brand-600 text-white shadow-soft hover:bg-brand-700"
-                  : "border border-ink-200 text-ink-800 hover:border-brand-300 hover:text-brand-700"
+                  ? "bg-white text-ink-50 shadow-soft hover:bg-ink-700"
+                  : "border border-ink-200 text-ink-800 hover:border-accent-400 hover:text-accent-400"
               }`}
             >
               Offerte aanvragen

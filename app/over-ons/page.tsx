@@ -6,9 +6,9 @@ import WhyUs from "@/components/WhyUs";
 import CtaBanner from "@/components/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "Over ons - de mensen achter AL Design",
+  title: "Over ons - de maker achter AL Design",
   description:
-    "Maak kennis met AL Design: een moderne webdesignstudio die ondernemers helpt opvallen met snelle, professionele websites. Persoonlijk, creatief en resultaatgericht.",
+    "Maak kennis met Alex Lamper, de maker achter AL Design. Eén vast aanspreekpunt, scherpe prijzen en snel, persoonlijk contact - van eerste idee tot livegang.",
   alternates: { canonical: "/over-ons" },
 };
 
@@ -19,10 +19,10 @@ export default function OverOnsPage() {
         eyebrow="Over ons"
         title={
           <>
-            De mensen achter <span className="text-brand-600">AL Design</span>
+            De maker achter <span className="text-accent-400">AL Design</span>
           </>
         }
-        description="Een moderne webdesignstudio die ondernemers helpt opvallen en groeien online."
+        description="Geen bureau met tussenlagen, maar één maker die jouw project van begin tot eind persoonlijk oppakt."
       />
       <Stats />
       <About />

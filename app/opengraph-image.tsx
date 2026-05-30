@@ -16,9 +16,9 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#ffffff",
+          background: "#08080a",
           backgroundImage:
-            "radial-gradient(circle at 85% 15%, rgba(168,85,247,0.18), transparent 45%), radial-gradient(circle at 10% 90%, rgba(99,102,241,0.20), transparent 45%)",
+            "radial-gradient(circle at 85% 15%, rgba(255,255,255,0.10), transparent 45%), radial-gradient(circle at 10% 90%, rgba(255,255,255,0.07), transparent 45%)",
           fontFamily: "sans-serif",
         }}
       >
@@ -28,20 +28,20 @@ export default function OpengraphImage() {
               width: 88,
               height: 88,
               borderRadius: 26,
-              background: "linear-gradient(135deg, #6366f1, #a855f7)",
+              background: "linear-gradient(135deg, #ffffff, #cfcfd6)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#fff",
+              color: "#0a0a0c",
               fontSize: 56,
               fontWeight: 800,
             }}
           >
             A
           </div>
-          <div style={{ display: "flex", gap: 12, fontSize: 44, fontWeight: 800, color: "#0f172a" }}>
+          <div style={{ display: "flex", gap: 12, fontSize: 44, fontWeight: 800, color: "#f6f5fc" }}>
             <span>AL</span>
-            <span style={{ color: "#6366f1" }}>Design</span>
+            <span style={{ color: "#a6a6af" }}>Design</span>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ export default function OpengraphImage() {
             fontSize: 76,
             fontWeight: 800,
             lineHeight: 1.05,
-            color: "#0f172a",
+            color: "#f6f5fc",
             maxWidth: 1000,
             letterSpacing: -2,
           }}
@@ -62,12 +62,12 @@ export default function OpengraphImage() {
           <span>Moderne</span>
           <span>websites</span>
           <span>die</span>
-          <span style={{ color: "#6366f1" }}>opvallen</span>
+          <span style={{ color: "#a6a6af" }}>opvallen</span>
           <span>én</span>
           <span>opleveren</span>
         </div>
 
-        <div style={{ display: "flex", marginTop: 32, fontSize: 30, color: "#475569" }}>
+        <div style={{ display: "flex", marginTop: 32, fontSize: 30, color: "#b4b0cf" }}>
           {`Webdesign · Webshops · SEO · Branding - ${site.url.replace("https://", "")}`}
         </div>
       </div>

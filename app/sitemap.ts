@@ -3,7 +3,7 @@ import { site, projects } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const routes = ["", "/over-ons", "/diensten", "/werk", "/contact", "/privacy"].map((path) => ({
+  const routes = ["", "/over-ons", "/diensten", "/casus", "/contact", "/privacy"].map((path) => ({
     url: `${site.url}${path}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const projectRoutes = projects.map((p) => ({
-    url: `${site.url}/werk/${p.slug}`,
+    url: `${site.url}/casus/${p.slug}`,
     lastModified: now,
     changeFrequency: "yearly" as const,
     priority: 0.6,

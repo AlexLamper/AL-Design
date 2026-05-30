@@ -11,12 +11,12 @@ export default function SectionHeading({ eyebrow, title, description, align = "c
   return (
     <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       <Reveal>
-        <span className="inline-block rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-700">
+        <span className="inline-block text-sm font-medium uppercase tracking-[0.25em] text-accent-400">
           {eyebrow}
         </span>
       </Reveal>
       <Reveal delay={0.05}>
-        <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-ink-900 md:text-4xl">
+        <h2 className="mt-4 font-display text-3xl font-light tracking-tight text-ink-900 md:text-4xl">
           {title}
         </h2>
       </Reveal>

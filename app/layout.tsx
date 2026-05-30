@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import Header from "@/components/Header";
@@ -13,11 +13,11 @@ const inter = Inter({
   display: "swap",
 });
 
-const sora = Sora({
-  variable: "--font-sora",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
-  weight: ["600", "700", "800"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#4f46e5",
+  themeColor: "#08070f",
   width: "device-width",
   initialScale: 1,
 };
@@ -100,9 +100,9 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${inter.variable} ${sora.variable} h-full antialiased`}
+      className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white">
+      <body className="flex min-h-full flex-col bg-transparent">
         <CursorGlow />
         <ScrollProgress />
         <Header />

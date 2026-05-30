@@ -1,43 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand - indigo/violet accent on a clean light canvas */
-  --color-brand-50: #eef2ff;
-  --color-brand-100: #e0e7ff;
-  --color-brand-200: #c7d2fe;
-  --color-brand-300: #a5b4fc;
-  --color-brand-400: #818cf8;
-  --color-brand-500: #6366f1;
-  --color-brand-600: #4f46e5;
-  --color-brand-700: #4338ca;
-  --color-brand-800: #3730a3;
-  --color-brand-900: #312e81;
+  /*
+   * Monochrome system to match the geometric black/white logo.
+   * "brand" and "accent" are neutral silver tones used as restrained
+   * accents (light text, hairline borders, subtle metallic gradients);
+   * pure white is the real highlight (white CTA buttons, headings).
+   */
+  --color-brand-50: #f7f7f9;
+  --color-brand-100: #ededf0;
+  --color-brand-200: #d6d6db;
+  --color-brand-300: #c2c2c9;
+  --color-brand-400: #a6a6af;
+  --color-brand-500: #f0f0f3;
+  --color-brand-600: #f6f6f8;
+  --color-brand-700: #ffffff;
+  --color-brand-800: #d6d6db;
+  --color-brand-900: #c2c2c9;
 
-  --color-accent-400: #c084fc;
-  --color-accent-500: #a855f7;
-  --color-accent-600: #9333ea;
+  /* Electric-blue accent — the single pop of colour on the monochrome canvas */
+  --color-accent-400: #60a5fa;
+  --color-accent-500: #3b82f6;
+  --color-accent-600: #2563eb;
 
-  --color-ink-50: #f8fafc;
-  --color-ink-100: #f1f5f9;
-  --color-ink-200: #e2e8f0;
-  --color-ink-300: #cbd5e1;
-  --color-ink-400: #94a3b8;
-  --color-ink-500: #64748b;
-  --color-ink-600: #475569;
-  --color-ink-700: #334155;
-  --color-ink-800: #1e293b;
-  --color-ink-900: #0f172a;
+  /*
+   * Ink ramp is INVERTED for the dark canvas:
+   * low numbers = darkest (surfaces / borders),
+   * high numbers = brightest (headings / strong text). Neutral grey, no tint.
+   */
+  --color-ink-50: #0a0a0c;
+  --color-ink-100: #141417;
+  --color-ink-200: #232327;
+  --color-ink-300: #34343a;
+  --color-ink-400: #6d6d76;
+  --color-ink-500: #909099;
+  --color-ink-600: #b6b6be;
+  --color-ink-700: #d2d2d8;
+  --color-ink-800: #e7e7ea;
+  --color-ink-900: #f7f7f9;
+
+  /* Glassy card surface that sits above the dark canvas */
+  --color-surface: #141417;
+  --color-surface-2: #1b1b20;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-display: var(--font-montserrat), var(--font-inter), ui-sans-serif, sans-serif;
 
-  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
-  --shadow-lift: 0 12px 40px rgba(79, 70, 229, 0.12);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lift: 0 22px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --background: #08080a;
+  --foreground: #f7f7f9;
 }
 
 html {
@@ -87,21 +102,49 @@ body {
   animation: marquee 28s linear infinite;
 }
 
-/* Decorative grid background */
+/* Decorative grid background (hairline light lines on the dark canvas) */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
+/* Concentric "tunnel" rings that slowly breathe behind the project fly-through. */
+.tunnel-rings {
+  background-image:
+    repeating-radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.08) 0,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px,
+      transparent 84px
+    );
+  -webkit-mask-image: radial-gradient(circle at center, black, transparent 72%);
+  mask-image: radial-gradient(circle at center, black, transparent 72%);
+}
+
+@keyframes tunnel-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.12); opacity: 0.95; }
+}
+
+.animate-tunnel {
+  animation: tunnel-pulse 9s ease-in-out infinite;
+}
+
+/* Soft glow text/utility */
+.text-glow {
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.35);
+}
+
 ::selection {
-  background: var(--color-brand-600);
-  color: #fff;
+  background: #ffffff;
+  color: #08080a;
 }
 
 /* Reduced motion respect */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .animate-blob, .animate-marquee { animation: none; }
+  .animate-blob, .animate-marquee, .animate-tunnel { animation: none; }
 }

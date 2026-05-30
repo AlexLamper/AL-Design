@@ -29,15 +29,15 @@ function CountUp({ value }: { value: number }) {
 
 export default function Stats() {
   return (
-    <section className="container-px mx-auto -mt-6 max-w-6xl">
-      <div className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-ink-200 bg-ink-200 shadow-soft md:grid-cols-4">
+    <section className="container-px mx-auto max-w-6xl py-12 md:py-16">
+      <div className="grid grid-cols-2 gap-y-10 md:grid-cols-4 md:divide-x md:divide-ink-200/50">
         {stats.map((stat) => (
-          <div key={stat.label} className="bg-white p-6 text-center md:p-8">
-            <div className="font-display text-3xl font-extrabold text-ink-900 md:text-4xl">
+          <div key={stat.label} className="px-4 text-center">
+            <div className="font-display text-4xl font-light tracking-tight text-ink-900 md:text-5xl">
               <CountUp value={stat.value} />
-              <span className="text-brand-600">{stat.suffix}</span>
+              <span className="text-ink-500">{stat.suffix}</span>
             </div>
-            <div className="mt-1 text-sm text-ink-500">{stat.label}</div>
+            <div className="mt-2 text-xs uppercase tracking-[0.18em] text-ink-500">{stat.label}</div>
           </div>
         ))}
       </div>

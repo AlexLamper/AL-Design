@@ -21,7 +21,7 @@ export default function PrivacyPage() {
           </p>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">Welke gegevens we verzamelen</h2>
+            <h2 className="font-display text-xl font-medium text-ink-900">Welke gegevens we verzamelen</h2>
             <p className="mt-2">
               Wanneer je het contactformulier invult, verwerken we je naam, e-mailadres,
               (optioneel) telefoonnummer en de inhoud van je bericht. We gebruiken deze gegevens
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">Hoe lang we gegevens bewaren</h2>
+            <h2 className="font-display text-xl font-medium text-ink-900">Hoe lang we gegevens bewaren</h2>
             <p className="mt-2">
               We bewaren je gegevens niet langer dan nodig is om je vraag te beantwoorden of een
               opdracht uit te voeren, tenzij we wettelijk verplicht zijn ze langer te bewaren.
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">Delen met derden</h2>
+            <h2 className="font-display text-xl font-medium text-ink-900">Delen met derden</h2>
             <p className="mt-2">
               We verkopen je gegevens nooit. We delen ze alleen met partijen die nodig zijn om onze
               dienst te leveren (zoals onze e-mailprovider) en uitsluitend voor dat doel.
@@ -46,7 +46,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">Je rechten</h2>
+            <h2 className="font-display text-xl font-medium text-ink-900">Je rechten</h2>
             <p className="mt-2">
               Je hebt het recht om je gegevens in te zien, te laten corrigeren of te laten
               verwijderen. Neem hiervoor contact met ons op via{" "}
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">Contact</h2>
+            <h2 className="font-display text-xl font-medium text-ink-900">Contact</h2>
             <p className="mt-2">
               Vragen over dit privacybeleid? Mail naar{" "}
               <a href={`mailto:${site.email}`} className="font-medium text-brand-600 hover:underline">

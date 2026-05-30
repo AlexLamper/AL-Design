@@ -24,7 +24,7 @@ export default function Faq() {
             const isOpen = open === i;
             return (
               <Reveal key={faq.q} delay={i * 0.04}>
-                <div className="overflow-hidden rounded-2xl border border-ink-200 bg-white shadow-soft">
+                <div className="overflow-hidden rounded-2xl border border-ink-200 bg-surface shadow-soft">
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
@@ -32,7 +32,7 @@ export default function Faq() {
                   >
                     <span className="font-display font-semibold text-ink-900">{faq.q}</span>
                     <span
-                      className={`flex-none text-brand-600 transition-transform duration-300 ${
+                      className={`flex-none text-accent-400 transition-transform duration-300 ${
                         isOpen ? "rotate-45" : ""
                       }`}
                     >

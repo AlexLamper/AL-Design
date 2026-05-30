@@ -9,13 +9,13 @@ type Props = {
 /** A browser-window mockup that frames a live screenshot of a project. */
 export default function BrowserFrame({ domain, shotUrl, alt }: Props) {
   return (
-    <div className="overflow-hidden rounded-xl border border-ink-200 bg-white shadow-soft">
+    <div className="overflow-hidden rounded-xl border border-ink-200 bg-surface shadow-soft">
       {/* Window chrome */}
       <div className="flex items-center gap-2 border-b border-ink-200 bg-ink-50 px-4 py-2.5">
         <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
         <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
         <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-        <div className="ml-3 flex-1 truncate rounded-md bg-white px-3 py-1 text-center text-xs text-ink-400 ring-1 ring-ink-200">
+        <div className="ml-3 flex-1 truncate rounded-md bg-surface px-3 py-1 text-center text-xs text-ink-400 ring-1 ring-ink-200">
           {domain}
         </div>
       </div>

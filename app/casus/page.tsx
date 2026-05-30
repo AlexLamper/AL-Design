@@ -4,20 +4,20 @@ import Portfolio from "@/components/Portfolio";
 import CtaBanner from "@/components/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "Ons werk - projecten & cases",
+  title: "Onze casussen - projecten",
   description:
     "Bekijk een selectie van websites die AL Design heeft ontworpen en gebouwd. Echte, live projecten - klik door voor de details.",
-  alternates: { canonical: "/werk" },
+  alternates: { canonical: "/casus" },
 };
 
-export default function WerkPage() {
+export default function CasusPage() {
   return (
     <>
       <PageHero
-        eyebrow="Werk"
+        eyebrow="Casus"
         title={
           <>
-            Projecten waar we <span className="text-brand-600">trots</span> op zijn
+            Projecten waar we <span className="text-accent-400">trots</span> op zijn
           </>
         }
         description="Een selectie van websites die we hebben ontworpen en gebouwd. Klik op een project voor meer details."

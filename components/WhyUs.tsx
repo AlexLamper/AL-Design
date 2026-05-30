@@ -27,13 +27,13 @@ export default function WhyUs() {
             <motion.div
               key={usp.title}
               variants={itemVariants}
-              className="flex gap-4 rounded-2xl border border-ink-200 bg-white p-6 shadow-soft transition-all duration-300 hover:border-brand-200 hover:shadow-lift"
+              className="flex gap-4 rounded-2xl border border-ink-200 bg-surface p-6 shadow-soft transition-all duration-300 hover:border-brand-200 hover:shadow-lift"
             >
-              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-50 text-brand-600">
+              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-500/15 text-accent-400">
                 <Check className="h-5 w-5" />
               </span>
               <div>
-                <h3 className="font-display font-bold text-ink-900">{usp.title}</h3>
+                <h3 className="font-display font-medium text-ink-900">{usp.title}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-ink-600">{usp.description}</p>
               </div>
             </motion.div>

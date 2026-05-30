@@ -18,13 +18,11 @@ export default function Portfolio({ limit, withCta = false, heading = true }: Pr
   const items = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section id="werk" className="relative overflow-hidden py-20 md:py-28">
-      <div className="absolute -bottom-32 right-0 -z-10 h-96 w-96 rounded-full bg-brand-200/30 blur-3xl" />
-
+    <section id="casus" className="relative overflow-hidden py-20 md:py-28">
       <div className="container-px mx-auto max-w-7xl">
         {heading && (
           <SectionHeading
-            eyebrow="Werk"
+            eyebrow="Casus"
             title="Een greep uit onze projecten"
             description="Echte, live websites die wij hebben ontworpen en gebouwd. Klik op een project voor meer details."
           />
@@ -45,10 +43,10 @@ export default function Portfolio({ limit, withCta = false, heading = true }: Pr
         {withCta && (
           <Reveal className="mt-12 text-center" delay={0.1}>
             <Link
-              href="/werk"
-              className="group inline-flex items-center gap-2 rounded-full border border-ink-200 bg-white px-7 py-3.5 text-base font-semibold text-ink-800 shadow-soft transition-all hover:border-brand-300 hover:text-brand-700"
+              href="/casus"
+              className="group inline-flex items-center gap-2 rounded-full border border-ink-200 bg-surface px-7 py-3.5 text-base font-semibold text-ink-800 shadow-soft transition-all hover:border-accent-400 hover:text-accent-400"
             >
-              Bekijk al ons werk
+              Bekijk alle casussen
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </Reveal>

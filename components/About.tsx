@@ -1,9 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 import { site, aboutValues } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal, { itemVariants } from "./Reveal";
+
+const advantages = [
+  "Scherpe, eerlijke prijzen",
+  "Snel & direct contact",
+  "Eén vast aanspreekpunt",
+  "Volledige betrokkenheid",
+];
 
 export default function About() {
   return (
@@ -13,36 +21,43 @@ export default function About() {
         <div className="grid gap-10 md:grid-cols-5 md:gap-14">
           <div className="md:col-span-2">
             <Reveal>
-              <span className="inline-block rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-700">
-                Ons verhaal
+              <span className="inline-block text-sm font-medium uppercase tracking-[0.25em] text-accent-400">
+                Over de maker
               </span>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-ink-900">
-                Jouw partner in een sterke online aanwezigheid
+              <h2 className="mt-4 font-display text-3xl font-normal tracking-tight text-ink-900">
+                Eén persoon, volledige toewijding
               </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-4 text-sm text-ink-500">Alex Lamper — oprichter &amp; developer</p>
             </Reveal>
           </div>
           <div className="space-y-4 text-lg leading-relaxed text-ink-600 md:col-span-3">
             <Reveal delay={0.1}>
               <p>
-                {site.name} helpt ondernemers opvallen met moderne, gebruiksvriendelijke websites die
-                écht resultaat opleveren. Geen standaard template-werk, maar ontwerp op maat dat past
-                bij jouw merk en doelen.
+                Achter {site.name} sta ik, Alex Lamper. Ik ontwerp en bouw elke website en elk
+                platform zelf - van het eerste idee tot livegang. Geen groot bureau met
+                accountmanagers en tussenlagen: je werkt rechtstreeks met de maker.
               </p>
             </Reveal>
             <Reveal delay={0.15}>
               <p>
-                Of je nu een eerste website nodig hebt, een verouderde site wilt vernieuwen of online
-                wilt verkopen - we denken met je mee en bouwen met de nieuwste technieken. Snel,
-                veilig en goed vindbaar in Google.
+                Dat heeft voordelen. Geen overhead betekent scherpe, eerlijke prijzen. Korte lijnen
+                betekenen snel en direct contact - je hoeft nooit te wachten op een afdeling. En
+                omdat ik elk project persoonlijk oppak, denk ik echt met je mee.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
-              <p>
-                Persoonlijk contact staat voorop. Korte lijnen, eerlijk advies en een transparante
-                prijs. Zo weet je altijd waar je aan toe bent.
-              </p>
+              <ul className="grid gap-3 pt-2 sm:grid-cols-2">
+                {advantages.map((adv) => (
+                  <li key={adv} className="flex items-center gap-2.5 text-base text-ink-700">
+                    <Check className="h-4 w-4 flex-none text-accent-400" />
+                    {adv}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           </div>
         </div>
@@ -67,12 +82,12 @@ export default function About() {
               <motion.div
                 key={value.title}
                 variants={itemVariants}
-                className="rounded-2xl border border-ink-200 bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+                className="rounded-2xl border border-ink-200 bg-surface p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
               >
-                <div className="font-display text-2xl font-extrabold text-brand-200">
+                <div className="font-display text-2xl font-normal text-brand-200">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="mt-2 font-display text-lg font-bold text-ink-900">{value.title}</h3>
+                <h3 className="mt-2 font-display text-lg font-medium text-ink-900">{value.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-600">{value.description}</p>
               </motion.div>
             ))}

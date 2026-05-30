@@ -1,6 +1,6 @@
 import {
   Code2,
-  ShoppingCart,
+  Layers,
   Search,
   Palette,
   type LucideIcon,
@@ -36,11 +36,11 @@ export const services: Service[] = [
     features: ["Responsive design", "Maatwerk in Next.js", "Bliksemsnel & veilig"],
   },
   {
-    icon: ShoppingCart,
-    title: "Webshops & e-commerce",
+    icon: Layers,
+    title: "Platformen & webapps",
     description:
-      "Verkoop online met een webshop die converteert. Veilige betalingen, eenvoudig beheer en een soepele checkout.",
-    features: ["Online betalingen", "Productbeheer", "Conversiegericht"],
+      "Meer dan een website: volledige platformen en webapplicaties op maat. Van portalen en dashboards tot tools die jouw proces automatiseren - een specialiteit van ons.",
+    features: ["Maatwerk webapps", "Dashboards & accounts", "Schaalbaar & veilig"],
   },
   {
     icon: Search,
@@ -221,7 +221,7 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/over-ons", label: "Over ons" },
   { href: "/diensten", label: "Diensten" },
-  { href: "/werk", label: "Werk" },
+  { href: "/casus", label: "Casus" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -284,7 +284,7 @@ export const packages: Package[] = [
 export const faqs = [
   {
     q: "Wat kost een website?",
-    a: "Dat hangt af van je wensen. Een onepager start vanaf €299, een volledige website vanaf €549. Je ontvangt altijd vooraf een heldere offerte zonder verrassingen achteraf.",
+    a: "Dat hangt helemaal af van je wensen en de omvang van het project. We werken niet met vaste prijzen, maar maken voor elk project een offerte op maat. Zo betaal je nooit voor meer dan je nodig hebt en weet je vooraf precies waar je aan toe bent.",
   },
   {
     q: "Hoe lang duurt het voordat mijn site live staat?",

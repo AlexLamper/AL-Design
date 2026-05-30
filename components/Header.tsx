@@ -27,36 +27,43 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-opacity duration-300 ${
         scrolled
-          ? "border-b border-ink-200/70 bg-white/80 backdrop-blur-xl shadow-soft"
-          : "border-b border-transparent bg-transparent"
+          ? "bg-gradient-to-b from-[var(--background)] via-[var(--background)] to-transparent"
+          : "bg-transparent"
       }`}
     >
       <nav className="container-px relative mx-auto flex h-16 max-w-7xl items-center justify-between md:h-20">
-        <Link href="/" className="flex items-center gap-2" aria-label={`${site.name} home`}>
-          <Logo className="h-8 w-auto" />
+        <Link href="/" className="flex items-center" aria-label={`${site.name} home`}>
+          <Logo className="h-10 w-auto md:h-11" />
         </Link>
 
         <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-brand-600 ${
-                  isActive(link.href) ? "text-brand-600" : "text-ink-600"
-                }`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`relative text-sm font-medium transition-colors ${
+                    active ? "text-ink-900" : "text-ink-500 hover:text-ink-900"
+                  }`}
+                >
+                  {link.label}
+                  {active && (
+                    <span className="absolute -bottom-2 left-0 h-0.5 w-full rounded-full bg-ink-900" />
+                  )}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="hidden items-center gap-3 md:flex">
           <Link
             href="/contact"
-            className="rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition-all hover:bg-brand-700 hover:shadow-lift"
+            className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-ink-50 shadow-soft transition-all hover:bg-ink-700 hover:shadow-lift"
           >
             Offerte aanvragen
           </Link>
@@ -74,7 +81,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-ink-200/70 bg-white/95 backdrop-blur-xl transition-[max-height] duration-300 md:hidden ${
+        className={`overflow-hidden border-t border-ink-200/70 bg-surface/95 backdrop-blur-xl transition-[max-height] duration-300 md:hidden ${
           open ? "max-h-96" : "max-h-0"
         }`}
       >
@@ -83,8 +90,11 @@ export default function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`block rounded-lg px-3 py-3 text-base font-medium transition-colors hover:bg-ink-50 hover:text-brand-600 ${
-                  isActive(link.href) ? "text-brand-600" : "text-ink-700"
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`block rounded-lg px-3 py-3 text-base font-medium transition-colors ${
+                  isActive(link.href)
+                    ? "bg-ink-100 text-ink-900"
+                    : "text-ink-600 hover:bg-ink-100 hover:text-ink-900"
                 }`}
               >
                 {link.label}
@@ -100,7 +110,7 @@ export default function Header() {
             </a>
             <Link
               href="/contact"
-              className="rounded-full bg-brand-600 px-5 py-3 text-center text-sm font-semibold text-white"
+              className="rounded-full bg-white px-5 py-3 text-center text-sm font-semibold text-ink-50"
             >
               Offerte aanvragen
             </Link>

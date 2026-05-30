@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/PageHero";
 import Contact from "@/components/Contact";
 import { site } from "@/lib/site";
 
@@ -10,18 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return (
-    <>
-      <PageHero
-        eyebrow="Contact"
-        title={
-          <>
-            Vraag vrijblijvend een <span className="text-brand-600">offerte</span> aan
-          </>
-        }
-        description="Vertel kort over je project en we nemen snel contact met je op - meestal binnen één werkdag."
-      />
-      <Contact />
-    </>
-  );
+  return <Contact />;
 }
