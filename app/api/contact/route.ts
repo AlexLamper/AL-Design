@@ -23,6 +23,7 @@ export async function POST(request: Request) {
 
   const parsed = contactSchema.safeParse(json);
   if (!parsed.success) {
+    console.error("Contact schema validation failed:", JSON.stringify(parsed.error.errors));
     return NextResponse.json(
       { error: "Controleer de ingevulde gegevens." },
       { status: 422 }
@@ -55,7 +56,7 @@ export async function POST(request: Request) {
     const { error } = await resend.emails.send({
       from,
       to,
-      replyTo: email,
+      reply_to: email,
       subject: `Nieuwe offerteaanvraag - ${projectType} (${name})`,
       text: [
         `Naam: ${name}`,

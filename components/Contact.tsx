@@ -14,7 +14,7 @@ import {
   Clock,
 } from "lucide-react";
 import { site, projectTypes } from "@/lib/site";
-import { contactSchema, type ContactInput } from "@/lib/contact-schema";
+import { type ContactInput } from "@/lib/contact-schema";
 import Reveal from "./Reveal";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -40,19 +40,11 @@ export default function Contact() {
     setStatus("submitting");
     setServerError(null);
 
-    // Client-side validation mirrors the server schema.
-    const parsed = contactSchema.safeParse(data);
-    if (!parsed.success) {
-      setStatus("error");
-      setServerError("Controleer de ingevulde gegevens.");
-      return;
-    }
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(parsed.data),
+        body: JSON.stringify(data),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => null);
@@ -263,6 +255,7 @@ export default function Contact() {
                       placeholder="Vertel kort over je project, wensen en eventueel budget…"
                       {...register("message", {
                         required: "Vertel kort waar we je mee kunnen helpen",
+                        minLength: { value: 10, message: "Vertel kort waar we je mee kunnen helpen (minimaal 10 tekens)" },
                       })}
                     />
                     {errors.message && (

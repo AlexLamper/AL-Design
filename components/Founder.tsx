@@ -9,7 +9,7 @@ const highlights = [
 
 export default function Founder() {
   return (
-    <section className="container-px mx-auto max-w-5xl py-16 md:py-24">
+    <section className="container-px mx-auto max-w-6xl py-8 md:py-14">
       <div className="grid items-start gap-16 md:grid-cols-2 md:gap-20">
 
         {/* Left: photo */}
@@ -45,8 +45,7 @@ export default function Founder() {
 
           <Reveal delay={0.05}>
             <h2 className="mt-4 font-display text-4xl font-light leading-tight tracking-tight text-ink-900 md:text-5xl">
-              Alex<br />
-              <span className="font-medium">Lamper</span>
+              Alex <span className="font-medium">Lamper</span>
             </h2>
           </Reveal>
 
