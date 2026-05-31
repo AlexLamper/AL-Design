@@ -28,7 +28,7 @@ export default async function EditProposalPage({
         </Link>
         {proposal && (
           <Link
-            href={`/proposal/${proposal.token}`}
+            href={`/offerte/${proposal.token}`}
             target="_blank"
             className="text-xs font-medium text-accent-400 hover:text-accent-500"
           >

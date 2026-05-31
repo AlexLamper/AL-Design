@@ -22,7 +22,7 @@ export default function ProposalRowActions({
   const [copied, setCopied] = useState(false);
 
   async function copyLink() {
-    const url = `${window.location.origin}/proposal/${token}`;
+    const url = `${window.location.origin}/offerte/${token}`;
     await navigator.clipboard.writeText(url);
     setCopied(true);
     setTimeout(() => setCopied(false), 1800);
@@ -56,7 +56,7 @@ export default function ProposalRowActions({
       </button>
 
       <Link
-        href={`/proposal/${token}`}
+        href={`/offerte/${token}`}
         target="_blank"
         className="rounded-lg border border-white/10 px-2.5 py-1.5 text-xs font-medium text-ink-700 transition hover:bg-white/5"
       >

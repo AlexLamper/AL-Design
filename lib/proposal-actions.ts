@@ -125,6 +125,6 @@ export async function acceptProposalAction(
     return { error: messages[result.reason] };
   }
 
-  revalidatePath(`/proposal/${token}`);
+  revalidatePath(`/offerte/${token}`);
   return {};
 }

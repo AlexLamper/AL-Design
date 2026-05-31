@@ -10,7 +10,7 @@ import AcceptProposal from "./AcceptProposal";
 
 export async function generateMetadata({
   params,
-}: PageProps<"/proposal/[token]">): Promise<Metadata> {
+}: PageProps<"/offerte/[token]">): Promise<Metadata> {
   const { token } = await params;
   const proposal = await getProposalByToken(token);
   return {
@@ -21,7 +21,7 @@ export async function generateMetadata({
 
 export default async function PublicProposalPage({
   params,
-}: PageProps<"/proposal/[token]">) {
+}: PageProps<"/offerte/[token]">) {
   const { token } = await params;
   const proposal = await getProposalByToken(token);
 

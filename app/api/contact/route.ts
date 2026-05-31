@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
   const parsed = contactSchema.safeParse(json);
   if (!parsed.success) {
-    console.error("Contact schema validation failed:", JSON.stringify(parsed.error.errors));
+    console.error("Contact schema validation failed:", JSON.stringify(parsed.error.issues));
     return NextResponse.json(
       { error: "Controleer de ingevulde gegevens." },
       { status: 422 }

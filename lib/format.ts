@@ -27,6 +27,7 @@ const dateTimeFmt = new Intl.DateTimeFormat("nl-NL", {
   year: "numeric",
   hour: "2-digit",
   minute: "2-digit",
+  timeZone: "Europe/Amsterdam",
 });
 
 export function formatDateTime(iso: string): string {
