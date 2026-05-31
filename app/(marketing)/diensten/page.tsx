@@ -24,7 +24,7 @@ export default function DienstenPage() {
         }
         description="Van het eerste ontwerp tot doorlopend onderhoud. Eén partner voor je complete digitale uitstraling."
       />
-      <Services />
+      <Services hideHeading />
       <Process />
       <Faq />
       <CtaBanner />

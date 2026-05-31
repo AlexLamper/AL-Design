@@ -98,7 +98,7 @@ export default function Hero() {
             variants={item}
             className="mx-auto mt-7 max-w-md text-lg leading-relaxed text-ink-500 lg:mx-0"
           >
-            Wij maken websites die opvallen, snel laden en jouw klanten overtuigen.
+            Wij maken op maat gemaakte websites die opvallen, snel laden en jouw klanten overtuigen.
           </motion.p>
 
           <motion.div

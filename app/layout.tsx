@@ -2,10 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import CursorGlow from "@/components/CursorGlow";
-import ScrollProgress from "@/components/ScrollProgress";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -72,28 +68,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: site.name,
-  description: site.description,
-  url: site.url,
-  email: site.email,
-  telephone: site.phoneIntl,
-  image: `${site.url}/opengraph-image`,
-  priceRange: "€€",
-  areaServed: { "@type": "Country", name: "Nederland" },
-  address: { "@type": "PostalAddress", addressCountry: "NL" },
-  serviceType: [
-    "Webdesign",
-    "Webontwikkeling",
-    "Webshops",
-    "SEO",
-    "Onderhoud",
-    "Branding",
-  ],
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -102,17 +76,7 @@ export default function RootLayout({
       lang="nl"
       className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-transparent">
-        <CursorGlow />
-        <ScrollProgress />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </body>
+      <body className="flex min-h-full flex-col bg-transparent">{children}</body>
     </html>
   );
 }

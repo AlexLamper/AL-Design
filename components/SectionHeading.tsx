@@ -1,9 +1,10 @@
+import type { ReactNode } from "react";
 import Reveal from "./Reveal";
 
 type Props = {
   eyebrow: string;
   title: string;
-  description?: string;
+  description?: ReactNode;
   align?: "center" | "left";
 };
 

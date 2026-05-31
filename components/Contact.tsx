@@ -75,7 +75,7 @@ export default function Contact() {
     "mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500";
 
   return (
-    <section id="contact" className="relative overflow-hidden pt-16 pb-10 md:pt-20 md:pb-12">
+    <section id="contact" className="relative overflow-hidden pt-28 pb-28 md:pt-36 md:pb-36">
       <div className="container-px mx-auto grid max-w-6xl gap-10 lg:grid-cols-5 lg:gap-16">
         {/* Left: clear orientation - how it works + how to reach us */}
         <div className="lg:col-span-2 lg:sticky lg:top-24 lg:self-start">

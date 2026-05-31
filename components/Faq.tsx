@@ -16,7 +16,15 @@ export default function Faq() {
         <SectionHeading
           eyebrow="Veelgestelde vragen"
           title="Goed om te weten"
-          description="Staat je vraag er niet bij? Neem gerust contact op - we helpen je graag verder."
+          description={
+            <>
+              Staat je vraag er niet bij? Neem gerust{" "}
+              <a href="/contact" className="text-accent-400 underline underline-offset-2 hover:text-accent-500">
+                contact
+              </a>{" "}
+              op - we helpen je graag verder.
+            </>
+          }
         />
 
         <div className="mt-12 space-y-3">

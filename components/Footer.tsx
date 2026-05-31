@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <Logo className="h-14 w-auto" variant="light" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-400">
-              {site.description}
+              Op maat gemaakte websites die opvallen, snel laden en jouw klanten overtuigen.
             </p>
           </div>
 

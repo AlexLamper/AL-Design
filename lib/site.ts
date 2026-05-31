@@ -32,7 +32,7 @@ export const services: Service[] = [
     icon: Code2,
     title: "Webdesign & development",
     description:
-      "Op maat ontworpen websites die razendsnel laden, perfect werken op elk scherm en jouw merk laten stralen.",
+      "Op maat gemaakte websites die razendsnel laden, perfect werken op elk scherm en jouw merk laten stralen.",
     features: [
       "Werkt perfect op mobiel, tablet & desktop",
       "Volledig op maat, geen standaard sjabloon",
@@ -58,7 +58,7 @@ export const services: Service[] = [
     title: "Logo & branding",
     description:
       "Een uniek logo en een herkenbare merkidentiteit, volledig op maat ontworpen. Van logo-ontwerp tot kleurenpalet en stijlgids - een sterke visuele identiteit die vertrouwen wekt en jouw bedrijf onderscheidt.",
-    features: ["Logo-ontwerp op maat", "Visuele stijlgids", "Merkstrategie"],
+    features: ["Logo-ontwerp op maat", "Visuele stijlgids", "Complete huisstijl"],
   },
 ];
 
@@ -79,21 +79,21 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "lambdago",
-    name: "LambdaGo",
+    name: "Lambda_GO",
     url: "https://www.lambdago.nl",
     domain: "lambdago.nl",
     category: "Webdesign & development",
     year: "2024",
     description:
-      "Een strakke, moderne website met een professionele uitstraling en heldere structuur.",
+      "Een simpele, moderne bedrijfssite met een professionele en betrouwbare uitstraling.",
     longDescription: [
-      "Voor LambdaGo ontwierpen en bouwden we een moderne website met een strakke, professionele uitstraling. De focus lag op een heldere structuur en een vlotte gebruikerservaring.",
+      "Voor Lambda_GO ontwierpen en bouwden we een strakke bedrijfssite die direct vertrouwen wekt. De focus lag op eenvoud en duidelijkheid: bezoekers zien meteen wie Lambda_GO is en wat ze bieden.",
       "De site is volledig responsive en geoptimaliseerd voor snelheid, zodat bezoekers op elk apparaat een soepele ervaring hebben.",
     ],
     challenge:
-      "Een complex aanbod overzichtelijk en toegankelijk presenteren zonder in te boeten op uitstraling.",
+      "Een helder, professioneel beeld neerzetten zonder de bezoeker te overweldigen met te veel informatie.",
     result:
-      "Een snelle, moderne site die het merk professioneel neerzet en bezoekers moeiteloos de weg wijst.",
+      "Een snelle, moderne site die het merk betrouwbaar neerzet en bezoekers direct de weg wijst.",
     tags: ["Webdesign", "Development", "Responsive"],
   },
   {
@@ -104,15 +104,15 @@ export const projects: Project[] = [
     category: "Bedrijfswebsite",
     year: "2024",
     description:
-      "Zakelijke bedrijfswebsite voor een afbouwbedrijf met focus op vakmanschap en vertrouwen.",
+      "Bedrijfswebsite voor P. Troost Afbouwbedrijf, inclusief een volledig nieuw logo en bedrijfsbranding door AL Design.",
     longDescription: [
-      "P. Troost Afbouwbedrijf wilde een zakelijke website die vakmanschap en betrouwbaarheid uitstraalt. We vertaalden dat naar een rustig, professioneel ontwerp met duidelijke diensten.",
-      "Met aandacht voor lokale vindbaarheid (SEO) en heldere contactmogelijkheden wordt het bedrijf nu beter gevonden door potentiële klanten in de regio.",
+      "Voor P. Troost Afbouwbedrijf hebben we het volledige traject verzorgd: van een nieuw logo en complete bedrijfsbranding tot een professionele bedrijfswebsite. Alles is in eigen huis ontworpen en gebouwd.",
+      "De site straalt vakmanschap en betrouwbaarheid uit, toont eerdere projecten en is lokaal goed vindbaar via gerichte SEO-optimalisatie.",
     ],
     challenge:
-      "Vertrouwen en vakmanschap online overbrengen voor een lokaal afbouwbedrijf.",
+      "Een lokaal afbouwbedrijf online neerzetten met een frisse identiteit die vertrouwen wekt en onderscheidt.",
     result:
-      "Een professionele bedrijfswebsite die vertrouwen wekt en lokaal goed vindbaar is.",
+      "Een complete merkidentiteit én een professionele website die lokaal goed scoort en klanten overtuigt.",
     tags: ["Bedrijfswebsite", "Branding", "SEO"],
   },
   {
@@ -123,15 +123,15 @@ export const projects: Project[] = [
     category: "Contentplatform",
     year: "2023",
     description:
-      "Een toegankelijk platform met veel content, overzichtelijk gepresenteerd en prettig leesbaar.",
+      "Een modern platform om de Bijbel beter te begrijpen, met content op een overzichtelijke en professionele manier gepresenteerd.",
     longDescription: [
-      "Bijbel-Studie is een contentrijk platform. De uitdaging was om grote hoeveelheden informatie overzichtelijk en prettig leesbaar aan te bieden.",
-      "We kozen voor een rustige, toegankelijke opzet met heldere navigatie, zodat bezoekers snel vinden wat ze zoeken en comfortabel kunnen lezen.",
+      "Bijbel-Studie is een modern contentplatform waarop bezoekers de Bijbel dieper kunnen bestuderen. De uitdaging was grote hoeveelheden informatie overzichtelijk en prettig leesbaar te maken.",
+      "We kozen voor een rustige, professionele opzet met heldere navigatie en een toegankelijke leeservaring, zodat bezoekers snel vinden wat ze zoeken.",
     ],
     challenge:
-      "Veel content toegankelijk en overzichtelijk presenteren zonder de bezoeker te overweldigen.",
+      "Een grote hoeveelheid religieuze content toegankelijk en professioneel presenteren zonder de bezoeker te overweldigen.",
     result:
-      "Een toegankelijk platform waar bezoekers prettig lezen en eenvoudig hun weg vinden.",
+      "Een helder, modern platform waar bezoekers comfortabel lezen en eenvoudig hun weg vinden.",
     tags: ["Platform", "Content", "Webdesign"],
   },
   {
@@ -142,15 +142,15 @@ export const projects: Project[] = [
     category: "Dienstverlening",
     year: "2024",
     description:
-      "Heldere dienstverleningswebsite die direct duidelijk maakt wat er geboden wordt.",
+      "Bedrijfswebsite voor Ruimingswerken Flakkee, inclusief volledige bedrijfsbranding door AL Design.",
     longDescription: [
-      "Voor Ruimingswerken Flakkee bouwden we een heldere dienstverleningswebsite die direct duidelijk maakt wat het bedrijf biedt.",
-      "Met een duidelijke structuur en directe contactmogelijkheden worden bezoekers snel omgezet in aanvragen.",
+      "Voor Ruimingswerken Flakkee verzorgden we het volledige pakket: een nieuw logo, complete bedrijfsbranding én een heldere bedrijfswebsite. Zo heeft het bedrijf nu één consistente, professionele uitstraling.",
+      "De site maakt in één oogopslag duidelijk welke diensten worden aangeboden en zet bezoekers snel om in concrete aanvragen.",
     ],
     challenge:
-      "In één oogopslag duidelijk maken welke diensten worden aangeboden en hoe je contact opneemt.",
+      "Een lokaal dienstverlener voorzien van een sterke identiteit en een website die direct vertrouwen wekt.",
     result:
-      "Een overzichtelijke site die bezoekers direct naar contact leidt.",
+      "Een compleet merk inclusief website, waarmee Ruimingswerken Flakkee professioneel en herkenbaar online staat.",
     tags: ["Dienstverlening", "Webdesign", "Lokaal"],
   },
 ];
@@ -230,7 +230,7 @@ export const usps = [
   },
   {
     title: "Persoonlijk contact",
-    description: "Korte lijnen, één vast aanspreekpunt en eerlijk advies - geen bureaucratie.",
+    description: "Korte lijnen, één vast aanspreekpunt en eerlijk advies. Direct bereikbaar, altijd.",
   },
   {
     title: "Eerlijke prijs",
@@ -336,7 +336,7 @@ export const faqs = [
 export const aboutValues = [
   {
     title: "Persoonlijk",
-    description: "Eén vast aanspreekpunt en korte lijnen. Geen bureaucratie, wel echte aandacht.",
+    description: "Eén vast aanspreekpunt en korte lijnen. Directe communicatie en oprechte betrokkenheid bij elk project.",
   },
   {
     title: "Creatief & onderscheidend",
