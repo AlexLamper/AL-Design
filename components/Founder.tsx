@@ -38,14 +38,14 @@ export default function Founder() {
         {/* Right: story */}
         <div className="pt-0 md:pt-4">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent-400">
+            <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent-400">
               De oprichter
             </span>
           </Reveal>
 
           <Reveal delay={0.05}>
             <h2 className="mt-4 font-display text-4xl font-light leading-tight tracking-tight text-ink-900 md:text-5xl">
-              Alex <span className="font-medium">Lamper</span>
+              <span className="font-medium">A</span>lex <span className="font-medium">L</span>amper
             </h2>
           </Reveal>
 
@@ -80,7 +80,7 @@ export default function Founder() {
           <Reveal delay={0.24}>
             <div className="mt-10 flex items-center gap-4">
               <div>
-                <p className="font-display font-semibold text-ink-900">Alex Lamper</p>
+                <p className="font-display font-medium text-ink-900">Alex Lamper</p>
                 <p className="text-sm text-ink-500">Oprichter · AL Design</p>
               </div>
             </div>

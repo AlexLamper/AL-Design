@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import { projects } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import ProjectCard from "./ProjectCard";
-import Reveal from "./Reveal";
+import Reveal, { itemVariants } from "./Reveal";
 
 type Props = {
   limit?: number;
@@ -41,6 +41,25 @@ export default function Portfolio({ limit, withCta = false, heading = true }: Pr
           {items.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
+
+          {/* Placeholder — always shown last */}
+          <motion.div variants={itemVariants}>
+            <Link
+              href="/contact"
+              className="group flex h-full min-h-[22rem] cursor-pointer flex-col items-center justify-center rounded-3xl border border-dashed border-ink-300 bg-ink-100/30 p-10 text-center transition-all hover:border-accent-400 hover:bg-ink-100/60"
+            >
+              <span className="flex h-16 w-16 items-center justify-center rounded-full border border-dashed border-accent-400/60 text-accent-400">
+                <Plus className="h-7 w-7" />
+              </span>
+              <h3 className="mt-5 font-display text-xl font-medium text-ink-900">Jouw project hier</h3>
+              <p className="mt-2 max-w-xs text-sm leading-relaxed text-ink-500">
+                Wil jij ook in ons portfolio? Neem contact op en we bespreken de mogelijkheden.
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-ink-300 px-5 py-2.5 text-sm font-semibold text-ink-700 transition-all group-hover:border-accent-400 group-hover:text-accent-400">
+                Offerte aanvragen <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
+          </motion.div>
         </motion.div>
 
         {withCta && (

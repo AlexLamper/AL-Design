@@ -12,6 +12,7 @@ type LogoProps = {
 export default function Logo({ className, variant = "default" }: LogoProps) {
   const src =
     variant === "dark" ? "/logo/al-design-dark-trim.png" : "/logo/al-design-white-trim.png";
+  const autoClass = variant === "default" ? "logo-auto" : "";
   return (
     <Image
       src={src}
@@ -19,7 +20,7 @@ export default function Logo({ className, variant = "default" }: LogoProps) {
       width={512}
       height={512}
       priority
-      className={className}
+      className={`${autoClass} ${className ?? ""}`.trim()}
     />
   );
 }

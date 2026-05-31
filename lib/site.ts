@@ -116,25 +116,6 @@ export const projects: Project[] = [
     tags: ["Bedrijfswebsite", "Branding", "SEO"],
   },
   {
-    slug: "bijbel-studie",
-    name: "Bijbel-Studie",
-    url: "https://www.bijbel-studie.com",
-    domain: "bijbel-studie.com",
-    category: "Contentplatform",
-    year: "2023",
-    description:
-      "Een modern platform om de Bijbel beter te begrijpen, met content op een overzichtelijke en professionele manier gepresenteerd.",
-    longDescription: [
-      "Bijbel-Studie is een modern contentplatform waarop bezoekers de Bijbel dieper kunnen bestuderen. De uitdaging was grote hoeveelheden informatie overzichtelijk en prettig leesbaar te maken.",
-      "We kozen voor een rustige, professionele opzet met heldere navigatie en een toegankelijke leeservaring, zodat bezoekers snel vinden wat ze zoeken.",
-    ],
-    challenge:
-      "Een grote hoeveelheid religieuze content toegankelijk en professioneel presenteren zonder de bezoeker te overweldigen.",
-    result:
-      "Een helder, modern platform waar bezoekers comfortabel lezen en eenvoudig hun weg vinden.",
-    tags: ["Platform", "Content", "Webdesign"],
-  },
-  {
     slug: "ruimingswerken-flakkee",
     name: "Ruimingswerken Flakkee",
     url: "https://www.ruimingswerkenflakkee.nl",
@@ -178,7 +159,6 @@ export const showcaseSites: ShowcaseItem[] = [
   { slug: "lambdago", domain: "lambdago.nl" },
   { slug: "ruimingswerken-flakkee", domain: "ruimingswerkenflakkee.nl" },
   { slug: "bijbelapi", domain: "bijbelapi.com" },
-  { slug: "bijbel-studie", domain: "bijbel-studie.com" },
   { slug: "bijbelquiz", domain: "bijbelquiz.com" },
   { slug: "ptroost-afbouwbedrijf", domain: "ptroostafbouwbedrijf.nl" },
   { domain: "jouwsite.nl", placeholder: true },

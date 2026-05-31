@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ExternalLink, Target, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2 } from "lucide-react";
 import { projects, getProject, shotUrl, site } from "@/lib/site";
 import BrowserFrame from "@/components/BrowserFrame";
 import Reveal from "@/components/Reveal";
@@ -110,15 +110,6 @@ export default async function ProjectPage({ params }: Params) {
 
           <div className="space-y-5">
             <Reveal>
-              <div className="rounded-2xl border border-ink-200 bg-surface p-6 shadow-soft">
-                <div className="flex items-center gap-2 text-accent-400">
-                  <Target className="h-5 w-5" />
-                  <h3 className="font-display font-medium text-ink-900">De uitdaging</h3>
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-ink-600">{project.challenge}</p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.08}>
               <div className="rounded-2xl border border-ink-200 bg-surface p-6 shadow-soft">
                 <div className="flex items-center gap-2 text-accent-400">
                   <CheckCircle2 className="h-5 w-5" />
