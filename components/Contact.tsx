@@ -193,7 +193,10 @@ export default function Contact() {
                         type="email"
                         className={inputClass}
                         placeholder="naam@voorbeeld.nl"
-                        {...register("email", { required: "Vul je e-mailadres in" })}
+                        {...register("email", {
+                          required: "Vul je e-mailadres in",
+                          pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Vul een geldig e-mailadres in" },
+                        })}
                       />
                       {errors.email && (
                         <p className="mt-1 text-sm text-red-400">{errors.email.message}</p>
