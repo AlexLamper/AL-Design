@@ -56,7 +56,7 @@ export async function POST(request: Request) {
     const { error } = await resend.emails.send({
       from,
       to,
-      reply_to: email,
+      replyTo: email,
       subject: `Nieuwe offerteaanvraag - ${projectType} (${name})`,
       text: [
         `Naam: ${name}`,
