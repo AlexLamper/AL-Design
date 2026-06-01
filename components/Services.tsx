@@ -77,7 +77,7 @@ export default function Services({
       <Reveal delay={0.1}>
         <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-surface-2 to-surface px-8 py-7">
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-accent-400">
-            Volledig ontzorgd - wij regelen alles
+            Complete service - wij regelen alles
           </p>
           <p className="mx-auto mt-2 max-w-xl text-center text-sm text-ink-500">
             Van het opzetten van je site tot domein, hosting, zichtbaarheid in Google en

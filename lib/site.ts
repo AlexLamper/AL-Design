@@ -58,7 +58,7 @@ export const services: Service[] = [
     title: "Logo & branding",
     description:
       "Een uniek logo en een herkenbare merkidentiteit, volledig op maat ontworpen. Van logo-ontwerp tot kleurenpalet en stijlgids - een sterke visuele identiteit die vertrouwen wekt en jouw bedrijf onderscheidt.",
-    features: ["Logo-ontwerp op maat", "Visuele stijlgids", "Complete huisstijl"],
+    features: ["Logo-ontwerp op maat", "Visuele stijlgids", "Volledige merkidentiteit"],
   },
 ];
 
@@ -85,16 +85,16 @@ export const projects: Project[] = [
     category: "Webdesign & development",
     year: "2024",
     description:
-      "Een simpele, moderne bedrijfssite met een professionele en betrouwbare uitstraling.",
+      "Een heldere en moderne bedrijfswebsite met een professionele en betrouwbare uitstraling.",
     longDescription: [
-      "Voor Lambda_GO ontwierpen en bouwden we een strakke bedrijfssite die direct vertrouwen wekt. De focus lag op eenvoud en duidelijkheid: bezoekers zien meteen wie Lambda_GO is en wat ze bieden.",
-      "De site is volledig responsive en geoptimaliseerd voor snelheid, zodat bezoekers op elk apparaat een soepele ervaring hebben.",
+      "Voor Lambda_GO hebben we een moderne en overzichtelijke website opgeleverd die bezoekers een helder beeld geeft over het bedrijf en haar dienstverlening. Het doel was een strak en modern ontwerp waarin eenvoud, duidelijkheid en vertrouwen centraal staan.",
+      "De website is volledig responsive ontwikkeld, technisch geoptimaliseerd voor snelle laadtijden en functioneel gemaakt door het contactformulier.",
     ],
     challenge:
       "Een helder, professioneel beeld neerzetten zonder de bezoeker te overweldigen met te veel informatie.",
     result:
-      "Een snelle, moderne site die het merk betrouwbaar neerzet en bezoekers direct de weg wijst.",
-    tags: ["Webdesign", "Development", "Responsive"],
+      "Een moderne bedrijfswebsite die het merk Lambda_GO betrouwbaar neerzet en bezoekers op een effectieve manier omzet naar potentiële klanten.",
+    tags: ["Webontwikkeling", "Webdesign", "SEO", "Hosting", "Responsive design", "Contactformulier"],
   },
   {
     slug: "ptroost-afbouwbedrijf",
@@ -104,16 +104,16 @@ export const projects: Project[] = [
     category: "Bedrijfswebsite",
     year: "2024",
     description:
-      "Bedrijfswebsite voor P. Troost Afbouwbedrijf, inclusief een volledig nieuw logo en bedrijfsbranding door AL Design.",
+      "Bedrijfswebsite voor P. Troost Afbouwbedrijf, inclusief een volledig nieuw logo en bedrijfsbranding.",
     longDescription: [
-      "Voor P. Troost Afbouwbedrijf hebben we het volledige traject verzorgd: van een nieuw logo en complete bedrijfsbranding tot een professionele bedrijfswebsite. Alles is in eigen huis ontworpen en gebouwd.",
-      "De site straalt vakmanschap en betrouwbaarheid uit, toont eerdere projecten en is lokaal goed vindbaar via gerichte SEO-optimalisatie.",
+      "Voor P. Troost Afbouwbedrijf hebben we het volledige traject verzorgd, van branding en logo-ontwerp tot het ontwerp en ontwikkeling van de website. Het doel was een professionele maar simpele en overzichtelijke website neer te zetten die aansluit bij de kwaliteit en het vakmanschap van het bedrijf.",
+      "Hoe hebben we de kwaliteit en het vakmanschap van dit bedrijf laten zien? Door projecten via een overzichtelijk portfolio met foto's van gerealiseerd werk weer te geven. Hierdoor ontstaat direct een duidelijk beeld van de kwaliteit en expertise van het bedrijf.",
     ],
     challenge:
       "Een lokaal afbouwbedrijf online neerzetten met een frisse identiteit die vertrouwen wekt en onderscheidt.",
     result:
-      "Een complete merkidentiteit én een professionele website die lokaal goed scoort en klanten overtuigt.",
-    tags: ["Bedrijfswebsite", "Branding", "SEO"],
+      "Een complete merkidentiteit met een professionele website die perfect aansluiten bij de kwaliteit van het bedrijf.",
+    tags: ["Webontwikkeling", "Webdesign", "Branding", "Logo design", "SEO", "Hosting", "Responsive design"],
   },
   {
     slug: "ruimingswerken-flakkee",
@@ -121,18 +121,18 @@ export const projects: Project[] = [
     url: "https://www.ruimingswerkenflakkee.nl",
     domain: "ruimingswerkenflakkee.nl",
     category: "Dienstverlening",
-    year: "2024",
+    year: "2026",
     description:
-      "Bedrijfswebsite voor Ruimingswerken Flakkee, inclusief volledige bedrijfsbranding door AL Design.",
+      "Van logo tot website: een volledige bedrijfsbranding die zorgt voor een herkenbare en professionele uitstraling.",
     longDescription: [
-      "Voor Ruimingswerken Flakkee verzorgden we het volledige pakket: een nieuw logo, complete bedrijfsbranding én een heldere bedrijfswebsite. Zo heeft het bedrijf nu één consistente, professionele uitstraling.",
-      "De site maakt in één oogopslag duidelijk welke diensten worden aangeboden en zet bezoekers snel om in concrete aanvragen.",
+      "Voor Ruimingswerken Flakkee verzorgden we het volledige pakket: een nieuw logo, complete bedrijfsbranding én een heldere bedrijfswebsite.",
+      "De website presenteert de dienstverlening op een heldere en toegankelijke manier, zodat bezoekers direct begrijpen waarvoor ze bij het bedrijf terecht kunnen. Door een combinatie van sterke visuele elementen, duidelijke informatie en een gebruiksvriendelijke opzet ontstaat vanaf het eerste bezoek vertrouwen.",
     ],
     challenge:
       "Een lokaal dienstverlener voorzien van een sterke identiteit en een website die direct vertrouwen wekt.",
     result:
-      "Een compleet merk inclusief website, waarmee Ruimingswerken Flakkee professioneel en herkenbaar online staat.",
-    tags: ["Dienstverlening", "Webdesign", "Lokaal"],
+      "Een consistente, herkenbare website en merkidentiteit waarbij het bedrijf zich onderscheidt van anderen.",
+    tags: ["Webontwikkeling", "Webdesign", "Branding", "Logo design", "SEO", "Hosting", "Responsive design"],
   },
 ];
 
@@ -310,6 +310,10 @@ export const faqs = [
   {
     q: "Werken jullie ook met een bestaande merkidentiteit?",
     a: "Ja. Heb je al een logo en visuele stijl? Die verwerken we netjes in het ontwerp. Heb je nog niets? Dan ontwerpen we een passende visuele identiteit voor je merk.",
+  },
+  {
+    q: "Wat als ik grote aanpassingen wil aan mijn website?",
+    a: "Voor grotere wijzigingen — zoals een nieuwe pagina, een redesign of uitbreiding van functionaliteit — ontvang je vooraf een offerte op maat. Zo weet je precies wat het kost en kom je niet voor verrassingen te staan. Kleine aanpassingen, zoals het updaten van tekst of afbeeldingen, worden doorgaans kosteloos verwerkt.",
   },
 ];
 
