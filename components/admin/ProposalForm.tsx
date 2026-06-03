@@ -153,6 +153,9 @@ export default function ProposalForm({ proposal }: { proposal?: Proposal }) {
         <div className="sm:col-span-2">
           <label htmlFor="timeline" className={labelClass}>
             Tijdlijn
+            <span className="ml-1 font-normal text-ink-400">
+              - verwachte doorlooptijd, bijv. &quot;3 weken na akkoord&quot;
+            </span>
           </label>
           <input
             id="timeline"
@@ -212,23 +215,11 @@ export default function ProposalForm({ proposal }: { proposal?: Proposal }) {
           <FieldError messages={errors.feeInterval} />
         </div>
         <div>
-          <label htmlFor="paymentTermDays" className={labelClass}>
-            Betalingstermijn (dagen)
-          </label>
-          <input
-            id="paymentTermDays"
-            name="paymentTermDays"
-            type="number"
-            min={0}
-            step="1"
-            defaultValue={proposal?.paymentTermDays ?? 14}
-            className={inputClass}
-          />
-          <FieldError messages={errors.paymentTermDays} />
-        </div>
-        <div>
           <label htmlFor="validityDays" className={labelClass}>
             Geldigheidsduur (dagen)
+            <span className="ml-1 font-normal text-ink-400">
+              - hoelang de klant deze prijs kan accepteren
+            </span>
           </label>
           <input
             id="validityDays"

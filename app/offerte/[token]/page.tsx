@@ -134,6 +134,10 @@ export default async function PublicProposalPage({
           <h2 className="font-display text-lg font-medium text-ink-800">
             Tijdlijn
           </h2>
+          <p className="mt-1 text-sm text-ink-500">
+            De verwachte doorlooptijd: hoelang het duurt voordat het project klaar
+            en online staat, gerekend vanaf akkoord op deze offerte.
+          </p>
           <div className="mt-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-surface/60 p-5">
             <Clock className="h-5 w-5 shrink-0 text-ink-500" />
             <span className="text-ink-700">{proposal.timeline}</span>
@@ -190,10 +194,6 @@ export default async function PublicProposalPage({
             Voorwaarden
           </h2>
           <ul className="mt-4 space-y-3 rounded-2xl border border-white/10 bg-surface/60 p-5 text-sm text-ink-600">
-            <li>
-              <span className="text-ink-500">Betalingstermijn:</span> betaling
-              binnen {proposal.paymentTermDays} dagen na facturatie.
-            </li>
             <li>
               <span className="text-ink-500">Geldigheid:</span> deze offerte is{" "}
               {proposal.validityDays} dagen geldig, tot en met{" "}

@@ -2,7 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { Resend } from "resend";
 import { auth } from "@/lib/auth";
+import { site } from "@/lib/site";
 import {
   acceptProposal,
   createProposal,
@@ -10,6 +12,7 @@ import {
   proposalInputSchema,
   setProposalStatus,
   updateProposal,
+  type Proposal,
   type ProposalStatus,
 } from "@/lib/proposals";
 
@@ -21,6 +24,45 @@ export type FormState = {
 async function requireAdmin() {
   const session = await auth();
   if (!session?.user) throw new Error("Unauthorized");
+}
+
+/**
+ * Notify the owner by e-mail when a client accepts a proposal. Best-effort:
+ * any failure is logged but never blocks the acceptance itself.
+ */
+async function sendAcceptNotification(proposal: Proposal): Promise<void> {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.error("RESEND_API_KEY ontbreekt - acceptatie-mail niet verzonden.");
+    return;
+  }
+
+  const to = process.env.CONTACT_TO_EMAIL || site.email;
+  const from = process.env.CONTACT_FROM_EMAIL || "AL Design <onboarding@resend.dev>";
+  const link = `${site.url}/offerte/${proposal.token}`;
+
+  try {
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from,
+      to,
+      replyTo: proposal.contactEmail,
+      subject: `Offerte geaccepteerd - ${proposal.projectTitle} (${proposal.companyName})`,
+      text: [
+        `${proposal.companyName} heeft de offerte geaccepteerd.`,
+        "",
+        `Project: ${proposal.projectTitle}`,
+        `Bedrijf: ${proposal.companyName}`,
+        `Contact: ${proposal.clientName} (${proposal.contactEmail})`,
+        `Akkoord door: ${proposal.acceptedByName ?? "-"}`,
+        "",
+        `Bekijk: ${link}`,
+      ].join("\n"),
+    });
+    if (error) console.error("Resend error (accept):", error);
+  } catch (err) {
+    console.error("Accept notification error:", err);
+  }
 }
 
 function dbErrorMessage(err: unknown): string {
@@ -57,7 +99,6 @@ export async function saveProposalAction(
     oneTimeFee: formData.get("oneTimeFee"),
     monthlyFee: formData.get("monthlyFee"),
     feeInterval: formData.get("feeInterval"),
-    paymentTermDays: formData.get("paymentTermDays"),
     validityDays: formData.get("validityDays"),
     notes: formData.get("notes") ?? "",
     status: formData.get("status"),
@@ -129,6 +170,8 @@ export async function acceptProposalAction(
     };
     return { error: messages[result.reason] };
   }
+
+  await sendAcceptNotification(result.proposal);
 
   revalidatePath(`/offerte/${token}`);
   return {};

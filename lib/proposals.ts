@@ -32,7 +32,6 @@ type ProposalDoc = {
   oneTimeFee: number;
   monthlyFee: number;
   feeInterval?: FeeInterval;
-  paymentTermDays?: number;
   validityDays?: number;
   notes: string;
   status: ProposalStatus;
@@ -65,7 +64,6 @@ function serialize(doc: ProposalDoc): Proposal {
     oneTimeFee: doc.oneTimeFee,
     monthlyFee: doc.monthlyFee,
     feeInterval: doc.feeInterval ?? "month",
-    paymentTermDays: doc.paymentTermDays ?? 14,
     validityDays: doc.validityDays ?? 30,
     notes: doc.notes,
     status: doc.status,

@@ -17,8 +17,8 @@ export default function AcceptProposal({ token }: { token: string }) {
         Akkoord op deze offerte
       </h2>
       <p className="mt-2 text-sm text-ink-500">
-        Ga je akkoord? Vul je naam in en bevestig. Je ontvangt vervolgens bericht
-        over de volgende stappen.
+        Ga je akkoord? Vul je naam in en bevestig. Wij nemen vervolgens zo snel
+        mogelijk contact met je op over de volgende stappen.
       </p>
 
       <form action={action} className="mt-6 space-y-4">

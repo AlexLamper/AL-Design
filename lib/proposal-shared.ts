@@ -65,10 +65,6 @@ export const proposalInputSchema = z.object({
   oneTimeFee: z.coerce.number().min(0, "Bedrag kan niet negatief zijn."),
   monthlyFee: z.coerce.number().min(0, "Bedrag kan niet negatief zijn."),
   feeInterval: z.enum(FEE_INTERVALS).default("month"),
-  paymentTermDays: z.coerce
-    .number()
-    .int()
-    .min(0, "Aantal dagen kan niet negatief zijn."),
   validityDays: z.coerce
     .number()
     .int()
@@ -95,7 +91,6 @@ export type Proposal = {
   oneTimeFee: number;
   monthlyFee: number;
   feeInterval: FeeInterval;
-  paymentTermDays: number;
   validityDays: number;
   notes: string;
   status: ProposalStatus;
