@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { Check } from "lucide-react";
 import { acceptProposalAction, type FormState } from "@/lib/proposal-actions";
 
@@ -10,6 +10,14 @@ export default function AcceptProposal({ token }: { token: string }) {
     boundAction,
     {},
   );
+
+  // After a successful accept the page revalidates and the confirmation banner
+  // renders at the top — scroll up so the client actually sees it.
+  useEffect(() => {
+    if (state.ok) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [state.ok]);
 
   return (
     <section className="mt-14 rounded-2xl border border-white/10 bg-gradient-to-b from-surface-2 to-surface p-8 shadow-lift">

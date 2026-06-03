@@ -19,6 +19,8 @@ import {
 export type FormState = {
   error?: string;
   fieldErrors?: Record<string, string[] | undefined>;
+  /** Set after a successful public acceptance (used to scroll to the banner). */
+  ok?: boolean;
 };
 
 async function requireAdmin() {
@@ -174,5 +176,5 @@ export async function acceptProposalAction(
   await sendAcceptNotification(result.proposal);
 
   revalidatePath(`/offerte/${token}`);
-  return {};
+  return { ok: true };
 }
