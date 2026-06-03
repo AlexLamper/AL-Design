@@ -18,6 +18,12 @@ export const site = {
   email: "info@aldesign.nl",
   region: "Nederland",
   locale: "nl_NL",
+  // Wettelijke gegevens — alleen server-side gebruikt (offerte-footer), dus
+  // GEEN NEXT_PUBLIC_ prefix: blijven uit de client-bundle. Echte waarden in
+  // .env.local (gitignored) + Vercel env vars. Leeg = verborgen op offerte.
+  address: process.env.SITE_ADDRESS ?? "",
+  kvk: process.env.SITE_KVK ?? "",
+  vatNumber: process.env.SITE_VAT ?? "",
 } as const;
 
 export type Service = {

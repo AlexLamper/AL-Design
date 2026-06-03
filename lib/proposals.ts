@@ -2,7 +2,12 @@ import "server-only";
 import { randomBytes } from "node:crypto";
 import { ObjectId, type Collection } from "mongodb";
 import { getDb } from "@/lib/db";
-import type { Proposal, ProposalInput, ProposalStatus } from "@/lib/proposal-shared";
+import type {
+  FeeInterval,
+  Proposal,
+  ProposalInput,
+  ProposalStatus,
+} from "@/lib/proposal-shared";
 
 export type { Proposal, ProposalInput, ProposalStatus } from "@/lib/proposal-shared";
 export {
@@ -18,12 +23,17 @@ type ProposalDoc = {
   clientName: string;
   companyName: string;
   contactEmail: string;
+  clientAddress?: string;
+  clientVatNumber?: string;
   projectTitle: string;
   projectDescription: string;
   services: string[];
   timeline: string;
   oneTimeFee: number;
   monthlyFee: number;
+  feeInterval?: FeeInterval;
+  paymentTermDays?: number;
+  validityDays?: number;
   notes: string;
   status: ProposalStatus;
   createdAt: Date;
@@ -45,12 +55,18 @@ function serialize(doc: ProposalDoc): Proposal {
     clientName: doc.clientName,
     companyName: doc.companyName,
     contactEmail: doc.contactEmail,
+    // Defaults keep proposals created before these fields existed valid.
+    clientAddress: doc.clientAddress ?? "",
+    clientVatNumber: doc.clientVatNumber ?? "",
     projectTitle: doc.projectTitle,
     projectDescription: doc.projectDescription,
     services: doc.services,
     timeline: doc.timeline,
     oneTimeFee: doc.oneTimeFee,
     monthlyFee: doc.monthlyFee,
+    feeInterval: doc.feeInterval ?? "month",
+    paymentTermDays: doc.paymentTermDays ?? 14,
+    validityDays: doc.validityDays ?? 30,
     notes: doc.notes,
     status: doc.status,
     createdAt: doc.createdAt.toISOString(),

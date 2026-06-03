@@ -5,7 +5,12 @@ import Logo from "@/components/Logo";
 import StatusBadge from "@/components/StatusBadge";
 import { site } from "@/lib/site";
 import { getProposalByToken } from "@/lib/proposals";
-import { formatEuro, formatDateTime } from "@/lib/format";
+import {
+  FEE_INTERVAL_LABELS,
+  FEE_INTERVAL_SUFFIX,
+  proposalNumber,
+} from "@/lib/proposal-shared";
+import { formatEuro, formatDate, formatDateTime } from "@/lib/format";
 import AcceptProposal from "./AcceptProposal";
 
 export async function generateMetadata({
@@ -27,6 +32,10 @@ export default async function PublicProposalPage({
 
   // Drafts are not yet shared; only sent/accepted/rejected are viewable.
   if (!proposal || proposal.status === "draft") notFound();
+
+  // Offerte is geldig tot opmaakdatum + geldigheidsduur.
+  const validUntil = new Date(proposal.createdAt);
+  validUntil.setDate(validUntil.getDate() + proposal.validityDays);
 
   return (
     <div className="min-h-screen">
@@ -51,6 +60,23 @@ export default async function PublicProposalPage({
           <span className="text-ink-700">{proposal.companyName}</span> · t.a.v.{" "}
           {proposal.clientName}
         </p>
+        {(proposal.clientAddress || proposal.clientVatNumber) && (
+          <p className="mt-1 text-sm text-ink-500">
+            {proposal.clientAddress}
+            {proposal.clientAddress && proposal.clientVatNumber && " · "}
+            {proposal.clientVatNumber && <>Btw: {proposal.clientVatNumber}</>}
+          </p>
+        )}
+
+        {/* Kenmerken: offertenummer + opmaakdatum */}
+        <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 rounded-2xl border border-white/10 bg-surface/60 p-5 text-sm sm:max-w-md">
+          <dt className="text-ink-500">Offertenummer</dt>
+          <dd className="text-ink-700">{proposalNumber(proposal)}</dd>
+          <dt className="text-ink-500">Opmaakdatum</dt>
+          <dd className="text-ink-700">{formatDate(proposal.createdAt)}</dd>
+          <dt className="text-ink-500">Geldig tot</dt>
+          <dd className="text-ink-700">{formatDate(validUntil.toISOString())}</dd>
+        </dl>
 
         {/* Accepted banner */}
         {proposal.status === "accepted" && (
@@ -129,10 +155,15 @@ export default async function PublicProposalPage({
             </div>
             {proposal.monthlyFee > 0 && (
               <div className="rounded-2xl border border-white/10 bg-surface/60 p-6">
-                <p className="text-sm text-ink-500">Maandelijks</p>
+                <p className="text-sm text-ink-500">
+                  {FEE_INTERVAL_LABELS[proposal.feeInterval]}
+                </p>
                 <p className="mt-2 font-display text-3xl font-medium text-ink-900">
                   {formatEuro(proposal.monthlyFee)}
-                  <span className="text-base text-ink-400"> / mnd</span>
+                  <span className="text-base text-ink-400">
+                    {" "}
+                    {FEE_INTERVAL_SUFFIX[proposal.feeInterval]}
+                  </span>
                 </p>
                 <p className="mt-1 text-xs text-ink-400">excl. btw</p>
               </div>
@@ -152,6 +183,28 @@ export default async function PublicProposalPage({
             </p>
           </section>
         )}
+
+        {/* Voorwaarden */}
+        <section className="mt-12">
+          <h2 className="font-display text-lg font-medium text-ink-800">
+            Voorwaarden
+          </h2>
+          <ul className="mt-4 space-y-3 rounded-2xl border border-white/10 bg-surface/60 p-5 text-sm text-ink-600">
+            <li>
+              <span className="text-ink-500">Betalingstermijn:</span> betaling
+              binnen {proposal.paymentTermDays} dagen na facturatie.
+            </li>
+            <li>
+              <span className="text-ink-500">Geldigheid:</span> deze offerte is{" "}
+              {proposal.validityDays} dagen geldig, tot en met{" "}
+              {formatDate(validUntil.toISOString())}.
+            </li>
+            <li>
+              <span className="text-ink-500">Btw:</span> alle genoemde bedragen
+              zijn exclusief btw.
+            </li>
+          </ul>
+        </section>
 
         {/* Accept */}
         {proposal.status === "sent" && (
@@ -176,6 +229,12 @@ export default async function PublicProposalPage({
               {site.phone}
             </a>
             .
+          </p>
+          <p className="mt-4 text-xs text-ink-400">
+            {site.legalName}
+            {site.address && <> · {site.address}</>}
+            {site.kvk && <> · KvK {site.kvk}</>}
+            {site.vatNumber && <> · Btw {site.vatNumber}</>}
           </p>
         </footer>
       </main>

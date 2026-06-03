@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AlertTriangle } from "lucide-react";
 import { listProposals, type Proposal } from "@/lib/proposals";
 import { formatEuro, formatDate } from "@/lib/format";
+import { FEE_INTERVAL_SUFFIX } from "@/lib/proposal-shared";
 import StatusBadge from "@/components/StatusBadge";
 import ProposalRowActions from "@/components/admin/ProposalRowActions";
 
@@ -82,7 +83,11 @@ export default async function AdminHome() {
                   <p className="mt-2 text-xs text-ink-400">
                     {formatEuro(p.oneTimeFee)} eenmalig
                     {p.monthlyFee > 0 && (
-                      <> · {formatEuro(p.monthlyFee)} / maand</>
+                      <>
+                        {" "}
+                        · {formatEuro(p.monthlyFee)}{" "}
+                        {FEE_INTERVAL_SUFFIX[p.feeInterval]}
+                      </>
                     )}{" "}
                     · aangemaakt {formatDate(p.createdAt)}
                   </p>

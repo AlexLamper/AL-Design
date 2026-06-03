@@ -3,6 +3,8 @@
 import { useActionState } from "react";
 import Link from "next/link";
 import {
+  FEE_INTERVALS,
+  FEE_INTERVAL_LABELS,
   PROPOSAL_STATUSES,
   STATUS_LABELS,
   type Proposal,
@@ -71,6 +73,34 @@ export default function ProposalForm({ proposal }: { proposal?: Proposal }) {
             className={inputClass}
           />
           <FieldError messages={errors.contactEmail} />
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="clientAddress" className={labelClass}>
+            Adres klant
+            <span className="ml-1 font-normal text-ink-400">- optioneel</span>
+          </label>
+          <input
+            id="clientAddress"
+            name="clientAddress"
+            placeholder="Straatnaam 1, 1234 AB Plaats"
+            defaultValue={proposal?.clientAddress}
+            className={inputClass}
+          />
+          <FieldError messages={errors.clientAddress} />
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="clientVatNumber" className={labelClass}>
+            Btw-nummer klant
+            <span className="ml-1 font-normal text-ink-400">- optioneel</span>
+          </label>
+          <input
+            id="clientVatNumber"
+            name="clientVatNumber"
+            placeholder="NL000000000B00"
+            defaultValue={proposal?.clientVatNumber}
+            className={inputClass}
+          />
+          <FieldError messages={errors.clientVatNumber} />
         </div>
       </section>
 
@@ -150,7 +180,7 @@ export default function ProposalForm({ proposal }: { proposal?: Proposal }) {
         </div>
         <div>
           <label htmlFor="monthlyFee" className={labelClass}>
-            Maandelijks bedrag (€)
+            Terugkerend bedrag (€)
           </label>
           <input
             id="monthlyFee"
@@ -162,6 +192,54 @@ export default function ProposalForm({ proposal }: { proposal?: Proposal }) {
             className={inputClass}
           />
           <FieldError messages={errors.monthlyFee} />
+        </div>
+        <div>
+          <label htmlFor="feeInterval" className={labelClass}>
+            Facturatie-interval
+          </label>
+          <select
+            id="feeInterval"
+            name="feeInterval"
+            defaultValue={proposal?.feeInterval ?? "month"}
+            className={inputClass}
+          >
+            {FEE_INTERVALS.map((iv) => (
+              <option key={iv} value={iv}>
+                {FEE_INTERVAL_LABELS[iv]}
+              </option>
+            ))}
+          </select>
+          <FieldError messages={errors.feeInterval} />
+        </div>
+        <div>
+          <label htmlFor="paymentTermDays" className={labelClass}>
+            Betalingstermijn (dagen)
+          </label>
+          <input
+            id="paymentTermDays"
+            name="paymentTermDays"
+            type="number"
+            min={0}
+            step="1"
+            defaultValue={proposal?.paymentTermDays ?? 14}
+            className={inputClass}
+          />
+          <FieldError messages={errors.paymentTermDays} />
+        </div>
+        <div>
+          <label htmlFor="validityDays" className={labelClass}>
+            Geldigheidsduur (dagen)
+          </label>
+          <input
+            id="validityDays"
+            name="validityDays"
+            type="number"
+            min={0}
+            step="1"
+            defaultValue={proposal?.validityDays ?? 30}
+            className={inputClass}
+          />
+          <FieldError messages={errors.validityDays} />
         </div>
       </section>
 
