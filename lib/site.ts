@@ -12,7 +12,11 @@ export const site = {
   tagline: "Moderne websites die opvallen én opleveren",
   description:
     "AL Design ontwerpt en bouwt moderne, snelle websites en webapplicaties. Van webdesign en development tot SEO, onderhoud en visuele merkidentiteit - alles onder één dak.",
-  url: "https://aldesign.nl",
+  // MOET de www-variant zijn: Vercel serveert www.aldesign.nl met 200 en
+  // redirect non-www → www. Canonical/sitemap/robots/OG hangen aan deze waarde,
+  // dus die moet wijzen naar de URL die daadwerkelijk 200 geeft (anders
+  // "Gecrawld - momenteel niet geïndexeerd" door canonical/redirect-conflict).
+  url: "https://www.aldesign.nl",
   phone: "0657586667",
   phoneIntl: "+31657586667",
   email: "info@aldesign.nl",

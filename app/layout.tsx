@@ -59,6 +59,12 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
+  // Koppelt het domein aan Google Search Console. Token komt uit Search Console
+  // (Eigendom verifiëren > HTML-tag). Zet de waarde in .env.local + Vercel:
+  // GOOGLE_SITE_VERIFICATION=...  Leeg = geen tag (verificatie via DNS mogelijk).
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
   category: "technology",
 };
 
